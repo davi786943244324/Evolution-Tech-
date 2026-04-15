@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos de Informática</title>
+  <link rel="stylesheet" href="estilo_paginas.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <div class="header-top">
+        <!-- botão hamburguer (esquerda) -->
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+        <div class="logo-esq">
+          <img src="img/tech-para-todos.png" alt="Logo Tech Para Todos">
+        </div>
+
+        <!-- center-area: título + botões -->
+        <div class="center-area">
+          <h1>Cursos de Informática Básica Para melhor Idade</h1>
+          <div class="sub-nav-links">
+            <a href="../index.html">Início</a>
+            <a href="../sobrenos.html">Sobre Nós</a>
+            <a href="./index.html">Nossos Cursos</a>
+            <a href="../contato.html">Contato</a>
+          </div>
+        </div>
+        <!-- botões à direita -->
+        <div class="header-btns">
+          <label class="modo-escuro">
+            <input type="checkbox" id="toggle">
+            <span class="trilho"><span class="bola"></span></span>
+          </label>
+          <a href="../cadastro.html" class="btn-header">CADASTRE-SE</a>
+          <a href="../login.html" class="btn-header btn-acao">JÁ SOU ALUNO(A)</a>
+        </div>
+      </div>
+
+    </header>
+
+    <div class="course-card"> <!-- CARD DO CURSO -->
+      <div class="card-content"> <!-- CONTEÚDO DO CARD -->
+
+        <h2 class="texto">Pix Fácil: Do Zero à Prática</h2> <!-- TÍTULO DO CURSO -->
+        <img
+          src="../img/pix.jpg"
+          alt="Curso Word" class="course-Icon">  <!-- ÍCONE DO CURSO -->
+
+        <div class="card-info"> <!-- INFORMAÇÕES DO CURSO -->
+          <br>
+          <p class="texto" style="text-align: left;">Duração: <strong>1h</strong></p> <!-- CARGA HORÁRIA DO CURSO -->
+          <p class="texto" style="text-align: justify;">Aprenda a utilizar o Pix de forma simples, segura e eficiente!
+            Neste curso, você entende como fazer e receber pagamentos, usar QR Codes, configurar limites e garantir a
+            segurança das suas transações no dia a dia.</p> <!-- DESCRIÇÃO DO CURSO -->
+
+          <button>
+            <a href="videos/video_powerbi.html" class="button">Clique aqui para iniciar</a> <!-- BOTÃO DE INICIAR O CURSO -->
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-media"> <!-- ÁREA DO FOOTER -->
+      <a href="https://www.instagram.com/evolutiontech__/" target="_blank" rel="noopener noreferrer"
+        title="Siga-nos no Instagram" class="social-link"> <!-- LINK DO INSTAGRAM -->
+        <img src="./img/instagram3.png" alt="Ícone do Instagram"> <!-- AUTO EXPLICATIVO, ÍCONE DO INSTAGRAM -->
+        <span><strong>evolutiontech_</strong></span> <!-- @ DO PROJETO -->
+      </a>
+    </div>
+
+     <!-- LOGO DA EMPRESA NO FOOTER -->
+
+    <div class="footer-logo">
+      <img src="img/logotipo empresa (2).png" alt="Logo da Empresa">
+    </div>
+
+
+    <p>&copy; 2025 Tech Para Todos - Evolution Tech. Todos os direitos reservados.</p>
+
+  </footer>
+  <script src="../script.js"></script> <!-- SCRIPT DO DARK MODE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (isLoggedIn !== 'true') {
+        const querCadastrar = confirm('Você precisa estar logado para acessar os cursos. Deseja criar uma nova conta?');
+        if (querCadastrar) {
+          window.location.href = '../cadastro.html'; // Redireciona para o cadastro
+        } else {
+          window.location.href = '../login.html'; // Redireciona para o login
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

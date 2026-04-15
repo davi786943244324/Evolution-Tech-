@@ -1,0 +1,995 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s;
+    text-align: right;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    margin-top: 25px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+/* Container dos cards */
+.course-card {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Cada card */
+.course-card figure {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+}
+
+.course-card figure:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Imagem do curso */
+.course-Icon {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Texto */
+.texto {
+    text-align: left;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0.8rem 0;
+    color: black;
+}
+
+header {
+  background-color: #f57c00;
+  color: white;
+  padding: 15px 0; /* Aumenta o padding vertical do header */
+}
+
+.header-top {
+  padding: 0 20px; /* Padding vertical mínimo para o header */
+  box-sizing: border-box;
+  position: relative; /* Mantém a referência para itens posicionados dentro */
+  display: flex; /* Alinha itens lado a lado */
+  align-items: center; /* Alinha verticalmente */
+  width: 100%;
+}
+
+header h1 {
+  font-size: 1.8em; /* Título maior para mais destaque */
+  margin: 0; /* Remove margens padrão */
+  margin-bottom: 5px; /* Adiciona um pequeno espaço abaixo do título */
+}
+
+.center-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Permite o ajuste fino da posição */
+  left: -3px; /* Desloca o bloco para a direita. Ajuste o valor. */
+}
+
+.sub-nav-links {
+  display: flex;
+  justify-content: center; /* Centraliza os links da navegação */
+  flex-wrap: wrap;
+}
+
+.sub-nav-links a {
+  color: white;
+  margin: 0 15px; /* Aumenta o espaçamento entre os links */
+  text-decoration: none;
+  font-size: 18px; /* Aumenta o tamanho da fonte dos links */
+  padding: 5px 0;
+  font-weight: 500; /* Deixa a fonte um pouco mais encorpada */
+}
+
+.sub-nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* --- SEÇÃO DO LOGO ESQUERDO DO CABEÇALHO --- */
+.logo-esq {
+  width: 120px; /* Logo menor para o novo layout */
+  flex-shrink: 0; /* Impede que o logo encolha */
+}
+
+.logo-esq img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-dir img {
+  display: block; /* mostrar no desktop */
+  width: auto;
+  max-width: 140px; /* ajusta conforme necessidade */
+  max-height: 72px;
+  height: auto;
+  object-fit: contain;
+}
+
+.header-btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-header {
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  font-weight: bold;
+  line-height: 1;
+  background-color: #f57c00;
+  color: white;
+  border: 2px solid #f57c00;
+  white-space: normal;
+  display: flex;
+  flex-wrap: unset;
+}
+
+.btn-header:hover {
+  background-color: white;
+  color: #f57c00;
+  border-color: white;
+}
+
+.btn-aluno {
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+.btn-aluno:hover {
+  background-color: white;
+  color: #f57c00;
+  border-color: white;
+}
+
+.imagem-header {
+  height: 350px; /* Altura reduzida para os cards ficarem mais visíveis */
+  width: 100%;
+  overflow: hidden; /* Esconde as partes da imagem que são cortadas */
+}
+
+.imagem-header img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* Preenche o espaço, mantendo a proporção e cortando o excesso */
+  object-position: center 25%; /* Centraliza a imagem um pouco abaixo do topo, mantendo o rosto visível */
+}
+
+@media (max-width: 992px) {
+  .header-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .logo-dir,
+  .header-btns {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100%;
+    max-width: none;
+  }
+
+  .logo-esq {
+    display: flex;
+    justify-content: center; /* Centraliza o logo */
+    margin: 0 auto 10px; /* Centraliza e adiciona margem inferior */
+  }
+
+  header h1 {
+    font-size: 2em;
+    margin: 10px 0;
+    order: 2;
+  }
+
+  .header-btns {
+    margin-top: 15px;
+    order: 3;
+  }
+
+  /* Navegação (agora .sub-nav-links) */
+  .sub-nav-links {
+    order: 4;
+  }
+}
+/* menu hamburguer */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 1.4rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+
+/* 2) nav padrão (desktop) - mantém o comportamento atual */
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+/* 3) regras para telas pequenas */
+@media (max-width: 768px) {
+  /* removemos posicionamentos absolutos */
+  .logo-dir,
+  .header-btns {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    width: 100%;
+    max-width: none;
+  }
+
+  /* mostra o botao hamburguer */
+  .menu-toggle {
+    display: inline-block;
+    position: absolute;
+    left: 16px; /* ajustar conforme layout */
+    top: 18px;
+    color: #fff;
+  }
+
+  /* header layout no mobile */
+  header {
+    padding: 12px;
+    align-items: center;
+  }
+
+  /* h1 menor no mobile */
+  header h1 {
+    font-size: 1.1rem;
+    margin: 8px 0 10px 0;
+    text-align: center;
+    padding-left: 44px; /* evita ficar embaixo do botão */
+    padding-right: 44px;
+  }
+
+  /* .sub-nav-links escondido por padrão no mobile (abrirá com a classe menu-aberto no body) */
+  .sub-nav-links {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(245, 124, 0, 0.95); /* mesma cor do header */
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    z-index: 15;
+  }
+/* botão do modo escuro, para as opções do menu hamburguer*/
+  body.escuro .sub-nav-links{
+
+    background-color: #303030;
+
+  }
+ /* opções do menu hamburguer */
+  .sub-nav-links a {
+    width: 90%;
+    padding: 12px 10px;
+    margin: 6px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* quando o menu estiver aberto (a gente adiciona/removerá essa classe via JS) */
+  body.menu-aberto .sub-nav-links {
+    display: flex;
+  }
+
+  /* empurra o conteúdo principal para não ficar escondido atrás do header */
+  .imagem-header {
+    margin-top: 0; /* definimos um espaçamento controlado abaixo */
+  }
+
+  /* garante que a imagem hero não seja coberta: reduz sua altura máxima */
+  .imagem-header img {
+    max-height: 260px;
+    object-fit: cover;
+  }
+
+  /* garante que os logos apareçam (se estavam com display:none) */
+  .logo-dir img {
+    display: block;
+    max-width: 140px; /* Mantém a limitação apenas para o logo da direita */
+    height: auto;
+  }
+
+  /* header buttons ficam em linha/baixo do h1 em mobile */
+  .header-btns {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* modo escuro */
+.modo-escuro {
+  display: flex;
+  align-items: center;
+}
+
+/* Esconde o checkbox */
+#toggle {
+  display: none;
+}
+
+/* Trilho */
+.trilho {
+  width: 45px;
+  height: 22px;
+  background: #ccc;
+  border-radius: 25px;
+  position: relative;
+  margin-left: 7px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Bolinha */
+.bola {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+/* Quando ativo */
+#toggle:checked + .trilho {
+  background: #4ea8ff;
+}
+
+#toggle:checked + .trilho .bola {
+  transform: translateX(23px);
+}
+
+/* --- Tema escuro aplicado ao body --- */
+body.escuro {
+  background-color: #303030;
+  color: #f1f1f1;
+}
+
+/* Ajusta cores no modo escuro */
+body.escuro header {
+  background-color: #121215;
+}
+/* escurecer botões do cabeçalho */
+body.escuro .btn-header,
+body.escuro .btn {
+  background-color: #303030;
+  color: #fff;
+  border-color: #000000;
+
+}
+/* impede os textos de bugarem no dark mode */
+body.escuro figure{
+  
+  background-color: #121215;
+
+}
+/* botão com cor cinza*/
+body.escuro .button{
+  
+  background: #303030;
+
+}
+/* fonte branca */
+body.escuro .texto{
+  
+  color: white;
+
+}
+/* card escuro e letras brancas*/
+body.escuro .card {
+  background-color: #000000;
+  color: #ddd;
+}
+
+.h2 {
+  color: #fff;
+}
+/*botão do instagram*/
+.social-link {
+  display: inline-flex; /* Alinha o ícone e o texto na mesma linha */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 8px; /* Espaço entre o ícone e o texto */
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.social-media img {
+  width: 30px; /* Tamanho do ícone */
+  height: 30px;
+  vertical-align: middle; /* Alinha o ícone com o texto */
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .logo-esq {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    nav a {
+        padding-top: 0;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    .logo-esq img {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    .course-card {
+        width: 95%;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .course-card figure {
+        padding: 0.8rem;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 20px;
+    }
+}
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/*cabeçalho*/
+header {
+    background-color: #f57c00;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    margin-top: 25px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+/* Container dos cards */
+.course-card {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Cada card */
+.course-card figure {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+}
+
+.course-card figure:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Imagem do curso */
+.course-Icon {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Texto */
+.texto {
+    text-align: left;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0.8rem 0;
+    color: black;
+}
+
+/* Botão estilizado */
+button {
+    background: none;
+    border: none;
+    margin-top: 0.5rem;
+}
+
+button a {
+    display: inline-block;
+    text-decoration: none;
+    background: #f57c00;
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+/*aumentar botão quando passar o mouse me cima dele*/
+button a:hover {
+    background: #ff8c00;
+    transform: scale(1.05);
+}
+/*Rodapé*/
+footer {
+  position: relative; /* necessário para posicionamento absoluto interno */
+  background-color: #121215;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Instagram no canto inferior esquerdo */
+footer .social-media {
+  position: absolute;
+  left: 16px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* garante que o link e ícone fiquem alinhados */
+footer .social-media .social-link {
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* tamanho do ícone do instagram */
+footer .social-media img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* Logo da empresa no canto inferior direito */
+footer .footer-logo {
+  position: absolute;
+  right: 16px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+/* tamanho da logo da empresa */
+footer .footer-logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* evita sobreposição em telas pequenas: empilha tudo e centraliza */
+@media (max-width: 480px) {
+  footer .social-media,
+  footer .footer-logo {
+    position: static;
+    margin: 8px 0;
+    justify-content: center;
+  }
+
+  footer {
+    padding-bottom: 18px;
+  }
+
+  /* reduz a logo da empresa em telas muito pequenas */
+  footer .footer-logo img {
+    width: 96px;
+  }
+}
+/* === RESPONSIVIDADE === */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .logo-esq {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    .header-btns {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    .logo-esq img {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    .course-card {
+        width: 95%;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .course-card figure {
+        padding: 0.8rem;
+    }
+}
+
+/* === ESTILO GERAL DO CONTEÚDO === */
+
+header {
+  background-color: #f57c00;
+  color: white;
+  padding: 15px 0; /* Aumenta o padding vertical do header */
+}
+
+.header-top {
+  padding: 0 20px; /* Padding vertical mínimo para o header */
+  box-sizing: border-box;
+  position: relative; /* Mantém a referência para itens posicionados dentro */
+  display: flex; /* Alinha itens lado a lado */
+  align-items: center; /* Alinha verticalmente */
+  width: 100%;
+}
+
+header h1 {
+  font-size: 1.8em; /* Título maior para mais destaque */
+  margin: 0; /* Remove margens padrão */
+  margin-bottom: 5px; /* Adiciona um pequeno espaço abaixo do título */
+}
+
+.sub-nav-links {
+  display: flex;
+  justify-content: center; /* Centraliza os links da navegação */
+  flex-wrap: wrap;
+}
+
+.sub-nav-links a {
+  color: white;
+  margin: 0 15px; /* Aumenta o espaçamento entre os links */
+  text-decoration: none;
+  font-size: 18px; /* Aumenta o tamanho da fonte dos links */
+  padding: 5px 0;
+  font-weight: 500; /* Deixa a fonte um pouco mais encorpada */
+}
+
+.sub-nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* --- SEÇÃO DO LOGO ESQUERDO DO CABEÇALHO --- */
+.logo-esq {
+  width: 120px; /* Logo menor para o novo layout */
+  flex-shrink: 0; /* Impede que o logo encolha */
+}
+/* imagem da logo na esquerda*/
+.logo-esq img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-dir img {
+  display: block; /* mostrar no desktop */
+  width: auto;
+  max-width: 140px; /* ajusta conforme necessidade */
+  max-height: 72px;
+  height: auto;
+  object-fit: contain;
+}
+/*já sou aluno*/
+.header-btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+/* cadastre-se */
+.btn-header {
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  font-weight: bold;
+  line-height: 1;
+  background-color: #f57c00;
+  color: white;
+  border: 2px solid #f57c00;
+  white-space: normal;
+  display: flex;
+  flex-wrap: unset;
+}
+/*aumentar o btn quando passar o mouse por cima*/
+.btn-header:hover {
+  background-color: white;
+  color: #f57c00;
+  border-color: white;
+}
+
+/*aumentar o btn quando passar o mouse por cima*/
+.btn-aluno:hover {
+  background-color: white;
+  color: #f57c00;
+  border-color: white;
+}
+
+
+
+/* === SEÇÃO DO TIME === */
+.team-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px 100px;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 80px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.team-member {
+  background: #ffe0b2;
+  border-radius: 14px;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff8c00;
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  margin: 10px 0 5px;
+  color: #e65100;
+  font-size: 1.1rem;
+}
+
+.team-member p {
+  font-size: 0.95rem;
+  color: #5d4037;
+}
+
+body.escuro h3 {
+
+  color: #f1f1f1;
+
+}
+
+body.escuro .team-member {
+  background-color: #121215;
+  color: #f1f1f1;
+}
+
+body.escuro .team-member  p{
+  background-color: #121215;
+  color: #f1f1f1;
+}
+
+body.escuro .team-member img {
+
+  border: 4px solid #303030;
+
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 900px) {
+  .team-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .team-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* === SEÇÃO DO TIME (SOBRE NÓS) === */
+.team-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px 100px;
+  background-color: #fff3e0;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 80px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.team-member {
+  background: #ffe0b2;
+  border-radius: 14px;
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff8c00;
+  margin-bottom: 15px;
+}
+
+body.escuro .team-section {
+  background-color: #303030;
+}

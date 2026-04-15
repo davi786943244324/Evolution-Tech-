@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/tech-para-todos-logo-32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="icon-96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <title>Cursos de Informática Básica Para melhor Idade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  /* --- CONFIGURAÇÕES GERAIS E FOCO EM ACESSIBILIDADE --- */
+  :root {
+    --cor-primaria: #ff9900;
+    --cor-primaria-hover: #e68a00;
+    --cor-fundo-secao: #fffaf0;
+    --cor-texto-principal: #333;
+    /* Cinza escuro para alto contraste */
+    --cor-borda: #ddd;
+    --fonte-principal: 'Poppins', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Rolagem suave na página */
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto);
+  }
+
+  body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto-principal);
+    font-size: 18px;
+    /* Tamanho de fonte base maior para facilitar a leitura */
+    line-height: 1.7;
+    /* Espaçamento entre linhas mais generoso */
+  }
+
+  header {
+    position: relative;
+    /* Necessário para o posicionamento absoluto do menu */
+    z-index: 1001;
+    /* Garante que o header fique acima de outros elementos */
+  }
+
+  .header-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* Centraliza os itens verticalmente */
+    padding: 5px 20px;
+    /* Reduzi o padding vertical de 10px para 5px */
+    gap: 15px;
+    /* Adiciona um espaçamento entre os elementos do header */
+  }
+
+  .logo-esq img {
+    height: 80px;
+    /* Você pode ajustar este valor para o tamanho que desejar */
+    width: auto;
+    /* Faz a largura se ajustar para não amassar a imagem */
+    object-fit: contain;
+    /* Garante que a imagem caiba sem distorcer */
+  }
+
+  .center-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* Coloca o h1 e os links um sobre o outro */
+    align-items: center;
+    justify-content: center;
+    /* Centraliza o título */
+    gap: 15px;
+    /* Remove o gap para o novo layout */
+    gap: 5px;
+  }
+
+  .center-area .logo-esq {
+    order: -1;
+    /* Garante que o logo venha antes do título */
+  }
+
+  .center-area h1 {
+    margin: 0;
+    /* Remove margens padrão */
+    text-align: center;
+    /* Centraliza o texto */
+    font-size: 1.5em;
+    /* Ajuste de tamanho opcional */
+  }
+
+  /* Estilos para a seção de benefícios */
+  .beneficios {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0 20px 40px 20px;
+    background-color: #f8f9fa;
+  }
+
+  .card {
+    flex: 1;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 280px;
+    /* Garante que os cards não fiquem muito espremidos */
+    margin: 10px;
+  }
+
+  .card h3 {
+    font-size: 1.3em;
+    color: var(--cor-primaria);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    /* Efeito sutil de elevação */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Estilos para o rodapé */
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* Media Query para dispositivos móveis */
+  @media (max-width: 768px) {
+    .header-top {
+      flex-wrap: wrap;
+    }
+
+    .beneficios,
+    footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .header-top {
+      justify-content: space-between;
+    }
+
+    .center-area {
+      flex-direction: column;
+      /* Volta a ser coluna no mobile */
+      justify-content: flex-start;
+      /* Alinha itens à esquerda no mobile */
+      padding-left: 0;
+      /* Reseta o padding */
+    }
+
+    .header-btns {
+      order: 2;
+      /* Coloca os botões ao lado do hamburguer */
+      margin-left: auto;
+      /* Empurra para a direita */
+    }
+
+    .center-area {
+      order: 3;
+      /* Garante que venha depois do logo e do hamburguer */
+      width: 100%;
+      align-items: flex-start;
+      /* Alinha itens à esquerda */
+    }
+
+    .center-area h1 {
+      order: 0;
+      /* Garante que o h1 venha depois do logo */
+      text-align: left;
+      padding-left: 20px;
+    }
+  }
+
+  /* --- SEÇÃO DE CURSOS EM DESTAQUE --- */
+  .cursos-destaque {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: var(--cor-fundo-secao);
+  }
+
+  .cursos-destaque h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: inherit;
+    margin-top: 0;
+    position: relative;
+    display: inline-block;
+  }
+
+  .cards-container {
+    display: flex;
+    overflow-x: auto;
+    /* Habilita a rolagem horizontal */
+    gap: 20px;
+    padding: 20px 10px;
+    /* Padding para a sombra do card não ser cortada */
+    align-items: stretch;
+    /* Garante que todos os cards tenham a mesma altura */
+    justify-content: flex-start;
+    /* Alinha os cards à esquerda */
+  }
+
+  /* Estilizando a barra de rolagem no Chrome/Safari */
+  .cards-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .cards-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .cards-container::-webkit-scrollbar-thumb {
+    background: var(--cor-primaria);
+    border-radius: 10px;
+  }
+
+  .cards-container::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-primaria-hover);
+  }
+
+  .curso-card {
+    flex: 0 0 300px;
+    /* Base de 300px, não cresce, não encolhe */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .curso-card:hover {
+    transform: translateY(-10px);
+    /* Efeito de levantar o card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Sombra mais forte no hover */
+  }
+
+  .curso-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .curso-card-conteudo {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Faz este elemento crescer para preencher o espaço */
+    justify-content: space-between;
+    /* Empurra o botão para baixo */
+  }
+</style>
+<style>
+  /* --- ESTILOS DO POP-UP DE BOAS-VINDAS --- */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    /* Garante que fique sobre tudo */
+  }
+
+  .popup-content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 90%;
+    width: 400px;
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+<style>
+  .sub-nav-links {
+    display: flex;
+  }
+
+  /* Esconde o menu de navegação em telas menores por padrão */
+  @media (max-width: 768px) {
+    .sub-nav-links {
+      display: none;
+      /* Escondido por padrão, ativado via JS. */
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      /* Posiciona logo abaixo do header */
+      left: 0;
+      width: 100%;
+      background-color: #f57c00;
+      /* Fundo laranja no modo claro */
+      padding: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      align-items: center;
+      /* Centraliza os links horizontalmente */
+      gap: 10px;
+      /* Espaçamento entre os links */
+    }
+
+    /* Quando o menu está aberto, mostra os links */
+    .sub-nav-links.menu-aberto {
+      display: flex;
+    }
+
+    .sub-nav-links a {
+      background-color: #f57c00;
+      /* Fundo laranja no modo claro */
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 20px;
+      width: 70%;
+      /* Define uma largura para os botões */
+      max-width: 300px;
+      /* Largura máxima para os botões */
+      margin: 0;
+      /* Remove margens laterais desnecessárias */
+      transition: background-color 0.3s;
+    }
+
+    /* Mostra o botão hambúrguer apenas em telas menores */
+    .menu-toggle {
+      display: block;
+      /* Garante que o botão seja visível */
+      font-size: 2em;
+      background: none;
+      border: none;
+      color: #fff;
+      /* Alterado para branco em ambos os modos */
+      cursor: pointer;
+    }
+
+    /* Cor do menu hamburguer no modo escuro */
+    body.escuro .menu-toggle {
+      color: #fff;
+    }
+
+    /* Estilos do menu lateral no modo escuro */
+    body.escuro .sub-nav-links {
+      background-color: #121215;
+    }
+
+    body.escuro .sub-nav-links a {
+      background-color: #121215;
+    }
+  }
+
+  /* Esconde o conteúdo principal do header quando o menu está aberto */
+  @media (max-width: 768px) {
+    body.menu-aberto .header-content-wrapper {
+      display: none;
+    }
+  }
+
+  /* Esconde o botão hambúrguer em telas maiores */
+  @media (min-width: 769px) {
+    .menu-toggle {
+      display: none;
+    }
+
+    .sub-nav-links {
+      display: flex;
+      position: static;
+      /* Garante o comportamento padrão em telas grandes */
+      flex-direction: row;
+      /* Garante que os links fiquem em linha */
+      background-color: transparent;
+      /* Remove o fundo do menu mobile */
+      padding: 0;
+      /* Remove o padding do menu mobile */
+      box-shadow: none;
+      /* Remove a sombra do menu mobile */
+    }
+  }
+
+  /* Modo escuro para o pop-up */
+  body.escuro .popup-content {
+    background-color: #3a3a3a;
+    color: #f0f0f0;
+  }
+
+  body.escuro .popup-content h2 {
+    color: #f28705;
+  }
+
+  body.escuro .popup-close {
+    color: #ccc;
+  }
+
+  /* Ajuste para o título da seção de cursos no modo escuro */
+  body.escuro .cursos-destaque h2 {
+    color: #000;
+    /* Garante que o texto seja preto */
+  }
+
+  /* Estilo para o link do card de curso */
+  .curso-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Cor do parágrafo no modo escuro */
+  body.escuro .hero-bottom p {
+    color: #fff;
+  }
+</style>
+
+<body>
+  <header>
+    <div class="header-top">
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+      <div class="logo-esq">
+        <img src="img/tech-para-todos.png" alt="Logo Tech Para Todos">
+      </div>
+
+      <div class="center-area">
+        <h1>Cursos de Informática Básica Para melhor Idade</h1>
+        <nav class="sub-nav-links nav-links-container"
+          style="justify-content: center; padding: 10px 0; margin-left: 20px; margin-top: -20px;">
+          <a href="index.html" class="active">Início</a>
+          <a href="sobrenos.html">Sobre Nós</a>
+          <a href="cursos/index.html">Nossos Cursos</a>
+          <a href="contato.html">Contato</a>
+        </nav>
+      </div>
+      <div class="header-btns">
+        <label class="modo-escuro">
+          <input type="checkbox" id="toggle">
+          <span class="trilho"><span class="bola"></span></span>
+        </label>
+        <a href="cadastro.html" class="btn-header">CADASTRE-SE</a>
+        <a href="login.html" class="btn-header btn-acao">JÁ SOU ALUNO(A)</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Pop-up de Boas-Vindas -->
+  <div id="welcome-popup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+      <button id="close-popup" class="popup-close">&times;</button>
+      <h2 id="welcome-title"></h2>
+      <p id="welcome-message"></p>
+    </div>
+  </div>
+
+
+  <section class="imagem-header" style="margin-top: -1px; padding: 0; font-size: 0;">
+    <!-- 
+      Para ajustar a posição da imagem, altera o valor em 'object-position'.
+      O primeiro valor (50%) é para o alinhamento horizontal (esquerda/direita).
+      O segundo valor (30%) é para o alinhamento vertical (cima/baixo).
+      Valores menores que 50% movem a imagem para cima, e maiores movem para baixo.
+    -->
+    <img src="melhor-idade.gif" alt="gif"
+      style="width: 100%; height: 400px; object-fit: cover; object-position: 50% 40%; display: block;">
+  </section>
+
+  <section class="beneficios">
+    <div class="card">
+      <h3>Aulas Simples</h3>
+      <p>Explicações claras e fáceis de entender. Aprenda o essencial sem complicação.</p>
+    </div>
+    <div class="card">
+      <h3>Passo a Passo</h3>
+      <p>Siga o nosso método e aprenda a usar o WhatsApp, internet e e-mail no seu tempo.</p>
+    </div>
+    <div class="card">
+      <h3>Suporte Amigo</h3>
+      <p>Tire dúvidas a qualquer momento com nossa equipe dedicada. Você não estará sozinho!</p>
+    </div>
+  </section>
+
+  <section class="hero-bottom">
+    <div class="hero-conteudo">
+      <h1>Entre Para o Mundo Digital!</h1>
+      <p style="text-align: center; font-size: 1.2em; margin-bottom: 40px;">
+        Na <strong>Evolution Tech</strong>, você aprende no seu ritmo, com aulas pacientes e suporte amigo.
+      </p>
+
+      <!-- Seção de Cursos em Destaque -->
+      <section class="cursos-destaque" style="border-radius: 10px; margin-top: 30px; margin-bottom: 30px;">
+        <h2>Nossos Cursos Em Destaque:</h2>
+        <div class="cards-container">
+          <a href="cursos/pagina_excel.html" class="curso-card-link">
+            <div class="curso-card">
+              <img src="excel.jpeg" alt="Curso de Excel para Iniciantes">
+              <div class="curso-card-conteudo">
+                <h3>Excel Para Iniciantes</h3>
+                <p>Domine as planilhas e organize suas finanças e informações de forma simples e prática.</p>
+              </div>
+            </div>
+          </a>
+          <a href="cursos/pagina_canva.html" class="curso-card-link">
+            <div class="curso-card">
+              <img src="canva.jpeg" alt="Curso de Canva para Iniciantes">
+              <div class="curso-card-conteudo">
+                <h3>Canva Para Iniciantes</h3>
+                <p>Crie convites, cartões e posts para redes sociais com designs incríveis, mesmo sem experiência.</p>
+              </div>
+            </div>
+          </a>
+          <a href="cursos/pagina_powerbi.html" class="curso-card-link">
+            <div class="curso-card">
+              <img src="img/pix.jpg" alt="Curso de Power BI para Iniciantes">
+              <div class="curso-card-conteudo">
+                <h3>Pix Fácil: Do Zero à Prática</h3>
+                <p>Aprenda a utilizar o Pix de forma simples, segura e eficiente!<br>
+                  Neste curso, você entende como fazer e receber pagamentos,
+                  usar QR Codes, configurar limites e garantir
+                  a segurança das suas transações no dia a dia.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <a href="cadastro.html" class="btn">Quero Começar Agora!</a>
+      <a href="login.html" class="btn-secundario-laranja">Já Sou Aluno(a)</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-media">
+      <a href="https://www.instagram.com/evolutiontech__/" target="_blank" rel="noopener noreferrer"
+        title="Siga-nos no Instagram" class="social-link">
+        <img src="instagram3.png" alt="Ícone do Instagram">
+        <span><strong>evolutiontech_</strong></span>
+      </a>
+    </div>
+    <p>&copy; 2025 Tech Para Todos - Evolution Tech. Todos os direitos reservados.</p>
+    <div class="footer-logo">
+      <img src="logotipo empresa (2).png" alt="Logo da Empresa">
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- Lógica do Pop-up de Boas-Vindas ---
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      const welcomePopup = document.getElementById('welcome-popup');
+      const closePopupBtn = document.getElementById('close-popup');
+      const shouldShowPopup = sessionStorage.getItem('showWelcomePopup');
+
+      if (isLoggedIn && shouldShowPopup === 'true') {
+        const usuarioLogado = JSON.parse(sessionStorage.getItem('usuarioLogado'));
+        if (usuarioLogado && usuarioLogado.nome) {
+          document.getElementById('welcome-title').textContent = `Bem-vindo(a), ${usuarioLogado.nome}!`;
+          document.getElementById('welcome-message').textContent = 'Que bom ter você de volta. Explore nossos cursos e aproveite o aprendizado!';
+          welcomePopup.style.display = 'flex';
+          sessionStorage.removeItem('showWelcomePopup');
+        }
+      }
+
+      closePopupBtn.addEventListener('click', () => {
+        welcomePopup.style.display = 'none';
+      });
+
+      // --- Lógica do Menu Hambúrguer ---
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.sub-nav-links');
+
+      menuToggle.addEventListener('click', () => {
+        // Adiciona ou remove a classe 'menu-aberto' para mostrar/esconder o menu
+        navLinks.classList.toggle('menu-aberto');
+        document.body.classList.toggle('menu-aberto');
+      });
+
+      // --- Lógica de Acesso aos Cursos ---
+      const courseLinks = document.querySelectorAll('.curso-card-link');
+      courseLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+          if (isLoggedIn !== 'true') {
+            event.preventDefault(); // Impede a navegação
+            const querCadastrar = confirm('Você precisa estar logado para acessar os cursos. Deseja se cadastrar?');
+            if (querCadastrar) {
+              window.location.href = 'cadastro.html'; // Redireciona para o cadastro
+            } else {
+              window.location.href = 'login.html'; // Redireciona para o login
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

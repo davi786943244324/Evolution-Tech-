@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos de Informática</title>
+  <link rel="stylesheet" href="../estilo_paginas.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <div class="header-top">
+        <!-- botão hamburguer (esquerda) -->
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+        <div class="logo-esq">
+          <img src="../img/tech-para-todos.png" alt="Logo Tech Para Todos">
+        </div>
+
+        <!-- center-area: título + botões -->
+        <div class="center-area">
+          <h1>Cursos de Informática Básica Para melhor Idade</h1>
+          <div class="sub-nav-links">
+            <a href="../../../index.html">inicio</a>
+            <a href="../../sobrenos.html">Sobre Nós</a>
+            <a href="../../index.html">Nossos Cursos</a>
+            <a href="../../contato.html">Contato</a>
+          </div>
+        </div>
+        <!-- botões à direita -->
+        <div class="header-btns">
+          <label class="modo-escuro">
+            <input type="checkbox" id="toggle">
+            <span class="trilho"><span class="bola"></span></span>
+          </label>
+          <a href="../../cadastro.html" class="btn-header">CADASTRE-SE</a>
+          <a href="../../login.html" class="btn-header btn-acao">JÁ SOU ALUNO(A)</a>
+        </div>
+      </div>
+
+    </header>
+    <!-- CARD DO CURSO -->
+    <div class="course-card"> <!-- ÁREA DO VÍDEO -->
+      <div class="card-content">
+        <h2 class="texto">Vídeo aula</h2> <!-- TEXTO PADRÃO -->
+       <p style="font-weight: bold;">O GIT HUB NÃO SUPORTOU O TAMANHO DOS VÍDEOS</p>
+        <div class="card-info"> <!-- AVISO -->
+          <p>Preste atenção no conteúdo do vídeo. Ao término, caso esteja confiante de que entendeu o conteúdo
+            mencionado, inicie o questionário.</p>
+          <button> 
+            <a href="../Quiz/quiz-pix/quiz-pix.html" class="button">Iniciar questionário</a> <!-- BOTÃO DO QUESTIONÁRIO -->
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-media"> <!-- ÁREA DO FOOTER -->
+      <a href="https://www.instagram.com/evolutiontech__/" target="_blank" rel="noopener noreferrer"
+        title="Siga-nos no Instagram" class="social-link"> <!-- LINK DO INSTAGRAM -->
+        <img src="../img/instagram3.png" alt="Ícone do Instagram"> <!-- AUTO EXPLICATIVO, ÍCONE DO INSTAGRAM -->
+        <span><strong>evolutiontech_</strong></span> <!-- @ DO PROJETO -->
+      </a>
+    </div>
+
+      <!-- LOGO DA EMPRESA NO FOOTER -->
+
+    <div class="footer-logo">
+      <img src="../img/logotipo empresa (2).png" alt="Logo da Empresa">
+    </div>
+
+
+    <p>&copy; 2025 Tech Para Todos - Evolution Tech. Todos os direitos reservados.</p>
+
+  </footer>
+  <script src="../../script.js"></script> <!-- SCRIPT DO DARK MODE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+      if (isLoggedIn !== 'true') {
+        const querCadastrar = confirm('Você precisa estar logado para assistir aos vídeos. Deseja criar uma nova conta?');
+        if (querCadastrar) {
+          window.location.href = '../../cadastro.html'; // Redireciona para o cadastro
+        } else {
+          window.location.href = '../../login.html'; // Redireciona para o login
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

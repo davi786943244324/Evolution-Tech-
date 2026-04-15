@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos de Informática</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-top">
+      <!-- botão hamburguer (esquerda) -->
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+      <div class="logo-esq">
+        <img src="img/tech-para-todos.png" alt="Logo Tech Para Todos">
+      </div>
+
+      <!-- center-area: título + botões -->
+      <div class="center-area">
+        <h1>Cursos de Informática Básica Para melhor Idade</h1>
+        <div class="sub-nav-links">
+          <a href="../index.html">Início</a>
+          <a href="../sobrenos.html">Sobre Nós</a>
+          <a href="../cursos/index.html">Nossos Cursos</a>
+          <a href="../contato.html">Contato</a>
+        </div>
+      </div>
+      <!-- botões à direita -->
+      <div class="header-btns">
+        <label class="modo-escuro">
+          <input type="checkbox" id="toggle">
+          <span class="trilho"><span class="bola"></span></span>
+        </label>
+        <a href="../cadastro.html" class="btn-header">CADASTRE-SE</a>
+        <a href="../login.html" class="btn-header btn-acao">JÁ SOU ALUNO(A)</a>
+      </div>
+    </div>
+
+  </header>
+
+  <br>
+
+  <div class="course-card"> <!-- ÁREA DE CURSOS -->
+
+    <!-- CADA FIGURE É UM CURSO -->
+
+    <figure>
+      <img src="img/instagram.webp" alt="curso1" class="course-Icon"> <!-- ÍCONE DO CURSO -->
+      <label class="texto">Torne-se um influencer famoso no Instagram</label><br> <!-- TÍTULO DO CURSO -->
+      <button><a href="pagina_insta.html" class="button">Clique aqui!</a></button> <!-- BOTÃO DO CURSO -->
+      <br>
+      <p class="texto" style="text-align: left;">1.5h</p> <!-- CARGA HORÁRIA -->
+    </figure>
+    <!-- A ORDEM É A MESMA EM TODOS OS CURSOS -->
+    <figure>
+      <img src="img/canva.webp" alt="curso2" class="course-Icon">
+      <label class="texto">Conhecendo o Canva e suas funcionalidades</label><br>
+      <button><a href="pagina_canva.html" class="button">Clique aqui!</a></button>
+      <br>
+      <p class="texto" style="text-align: left;">1h</p>
+    </figure>
+
+    <figure>
+      <img
+        src="../img/pix.jpg"
+        alt="curso3" class="course-Icon">
+      <label class="texto">Pix Fácil: Do Zero à Prática</label><br>
+      <button><a href="pagina_powerbi.html" class="button">Clique aqui!</a></button>
+      <br>
+      <p class="texto" style="text-align: left;">1h</p>
+    </figure>
+
+    <figure>
+      <img src="img/word.jpg" alt="curso4" class="course-Icon">
+      <label class="texto">Word Básico</label><br>
+      <button><a href="pagina_word.html" class="button">Clique aqui!</a></button>
+      <br>
+      <p class="texto" style="text-align: left;">1h</p>
+    </figure>
+
+    <figure>
+      <img src="img/power.jpeg" alt="curso5" class="course-Icon">
+      <label class="texto">PowerPoint Básico</label><br>
+      <button><a href="pagina_power.html" class="button">Clique aqui!</a></button>
+      <br>
+      <p class="texto" style="text-align: left;">2.5h</p>
+    </figure>
+
+    <figure>
+      <img src="img/excel.webp" alt="curso6" class="course-Icon">
+      <label class="texto">Excel Básico</label><br>
+      <button><a href="pagina_excel.html" class="button">Clique aqui!</a></button>
+      <br>
+      <p class="texto" style="text-align: left;">3h</p>
+    </figure>
+
+  </div>
+  <br>
+  <footer>
+    <div class="social-media"> <!-- ÁREA DO FOOTER -->
+      <a href="https://www.instagram.com/evolutiontech__/" target="_blank" rel="noopener noreferrer"
+        title="Siga-nos no Instagram" class="social-link"> <!-- LINK DO INSTAGRAM -->
+        <img src="img/instagram3.png" alt="Ícone do Instagram"> <!-- AUTO EXPLICATIVO, ÍCONE DO INSTAGRAM -->
+        <span><strong>evolutiontech_</strong></span> <!-- @ DO PROJETO -->
+      </a>
+    </div>
+
+    <!-- LOGO DA EMPRESA NO FOOTER -->
+
+    <div class="footer-logo"> 
+      <img src="img/logotipo empresa (2).png" alt="Logo da Empresa">
+    </div>
+
+
+    <p>&copy; 2025 Tech Para Todos - Evolution Tech. Todos os direitos reservados.</p>
+
+  </footer>
+  <script src="../script.js"></script> <!-- SCRIPT DO DARK MODE -->
+  <script>
+
+    // Botão menu hamburguer
+    const menuBtn = document.querySelector('.menu-toggle');
+
+    menuBtn.addEventListener('click', () => {
+      document.body.classList.toggle('menu-aberto'); // abre/fecha menu
+    });
+
+    // Fecha o menu quando clicar em algum link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('menu-aberto');
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

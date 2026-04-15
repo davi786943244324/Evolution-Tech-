@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Canva</title>
+  <link rel="stylesheet" href="quiz-canva.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <audio id="hover-sound" src="../som/hover.mp3" preload="auto"></audio>
+  <audio id="correct-sound" src="../som/Check mark sound effect [v-aqBz6C4D4].mp3" preload="auto"></audio>
+  <audio id="wrong-sound" src="../som/Resposta errada Efeito sonoro [_VPhOMVr13c].mp3" preload="auto"></audio>
+  <audio id="celebration-sound" src="../som/FNAF_ Kids Cheering - Gaming Sound Effect (HD) [9bnUWuAO0oU].mp3" preload="auto"></audio>
+  <audio id="failed-sound" src="../som/Sad Trombone - Sound Effect (HD) [CQeezCdF4mk].mp3" preload="auto"></audio>
+
+ <header>
+      <div class="header-top">
+      <!-- botão hamburguer (esquerda) -->
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    
+
+    <div class="logo-esq">
+      <img src="../img/tech-para-todos.png" alt="Logo Tech Para Todos" style="height:140px;">
+    </div>
+    </div>  
+    <br>
+    <div class="center-area">
+        <h1>Cursos de Informática Básica Para melhor Idade</h1>
+        <br>
+        <div class="sub-nav-links">
+          <a href="../../../index.html">Início</a>
+          <a href="../../../sobrenos.html">Sobre Nós</a>
+          <a href="../../../cursos/index.html">Nossos Cursos</a>
+          <a href="../../../contato.html">Contato</a>
+          
+        </div>
+      </div>
+    <br>
+    <div class="header-btns">
+      <div id="modeBtn" class="toggle light">
+        <div class="slider"></div>
+    </div>
+      <a href="../../../cadastro.html" class="btn-header">CADASTRE-SE</a>
+      <a href="../../../login.html" class="btn-header btn-acao">JÁ SOU ALUNO(A)</a> 
+      
+    </div>
+</body>
+  </header>
+
+  <div class="quiz-container">
+    <h2 class="quiz-title">CANVA</h2>
+
+    <!-- Pergunta 1 -->
+    <div class="question active">
+      <img src="../img/canva.png">
+      <h2>Para que serve o Canva?</h2>
+       <div class="option" data-correct="true">Criar designs e artes visuais</div>
+       <div class="option" data-correct="false">Editar planilhas</div>
+       <div class="option" data-correct="false">Gravar vídeos longos</div>
+       <div class="option" data-correct="false">Fazer apresentações de código</div>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Pergunta 2 -->
+<div class="question">
+  <img src="../img/canva.png">
+  <h2>O Canva é mais usado para qual tipo de tarefa?</h2>
+  <div class="option" data-correct="false">Escrever textos longos</div>
+  <div class="option" data-correct="false">Fazer cálculos matemáticos</div>
+  <div class="option" data-correct="true">Criar posts, apresentações e convites</div>
+  <div class="option" data-correct="false">Tocar músicas</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 3 -->
+<div class="question">
+  <img src="../img/canva.png">
+  <h2>O que são os “templates” no Canva?</h2>
+  <div class="option" data-correct="false">Fotos bloqueadas</div>
+  <div class="option" data-correct="true">Modelos prontos para editar</div>
+  <div class="option" data-correct="false">Planilhas automáticas</div>
+  <div class="option" data-correct="false">Vídeos de fundo</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 4 -->
+<div class="question">
+  <img src="../img/canva.png">
+  <h2>O que é possível adicionar em um design do Canva?</h2>
+  <div class="option" data-correct="false">Somente texto</div>
+  <div class="option" data-correct="false">Somente imagens</div>
+  <div class="option" data-correct="false">Apenas planilhas</div>
+  <div class="option" data-correct="true">Imagens, textos, formas e vídeos</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 5 -->
+<div class="question">
+  <img src="../img/canva.png">
+  <h2>Qual é a principal vantagem do Canva?</h2>
+  <div class="option" data-correct="true">Facilidade de uso mesmo para iniciantes</div>
+  <div class="option" data-correct="false">Necessidade de instalar programas pesados</div>
+  <div class="option" data-correct="false">Usar apenas com código</div>
+  <div class="option" data-correct="false">Exige conhecimento avançado em design</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 6 -->
+<div class="question">
+  <img src="../img/canva.png">
+  <h2>O Canva pode ser usado para criar apresentações, assim como o PowerPoint?</h2>
+  <div class="option" data-correct="false">Não</div>
+  <div class="option" data-correct="false">Apenas com assinatura Premium</div>
+    <div class="option" data-correct="true">Sim</div>
+  <div class="option" data-correct="false">Somente no aplicativo móvel</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 7 -->
+<div class="question">
+  <img src="../img/canva.png">
+  <h2>Como salvar um design criado no Canva?</h2>
+  <div class="option" data-correct="false">Apenas imprimindo direto do site</div>
+  <div class="option" data-correct="false">Copiando o link e colando no Word</div>
+  <div class="option" data-correct="false">Tirando print da tela</div>
+  <div class="option" data-correct="true">Baixando o arquivo no formato desejado (PNG, PDF, etc.)</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 8 -->
+<div class="question">
+  <img src="../img/canva.png">
+  <h2>É possível trabalhar em equipe no Canva?</h2>
+  <div class="option" data-correct="false">Não, é apenas individual</div>
+  <div class="option" data-correct="false">Somente com 2 pessoas</div>
+   <div class="option" data-correct="true">Sim, é possível compartilhar e editar em grupo</div>
+  <div class="option" data-correct="false">Apenas com contas pagas</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 9 -->
+<div class="question">
+ <img src="../img/canva.png">
+  <h2>O Canva pode ser acessado de onde?</h2>
+  <div class="option" data-correct="true">Pelo navegador ou aplicativo</div>
+  <div class="option" data-correct="false">Apenas no computador</div>
+  <div class="option" data-correct="false">Somente no celular</div>
+  <div class="option" data-correct="false">Somente com internet paga</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 10 -->
+<div class="question">
+  <img src="../img/canva.png">
+  <h2>O que é o Canva Pro?</h2>
+  <div class="option" data-correct="false">Modo gratuito de teste</div>
+  <div class="option" data-correct="false">Aplicativo para celular</div>
+    <div class="option" data-correct="true">Versão paga com mais recursos e elementos</div>
+  <div class="option" data-correct="false">Editor de vídeos separado</div>
+  <div class="feedback"></div>
+</div>
+
+    <!-- Mascote de ajuda -->
+<div class="mascote-container" id="mascote">
+  <img src="../Mascote-IMG/imagem_2025-10-21_143653426-removebg-preview.png" alt="Mascote" class="mascote">
+  <div class="fala" id="fala">
+  <span class="texto-fala" id="texto-fala"></span>
+  </div>
+</div>
+
+
+    <!-- Tela final -->
+    <div class="question end">
+      <img src="../img/Captura de tela 2025-09-26 163624.png">
+      <h2>🎉 Fim do Quiz! 🎉</h2>
+      <p id="final-score"></p>
+    </div>
+
+  </div>
+
+<footer>
+    <div class="footer-logo">
+      <img src="../img/logotipo empresa (2).png" alt="Logo da Empresa">
+    </div>
+    <h1>&copy; 2025 Tech Para Todos - Evolution Tech. Todos os direitos reservados.</h1> 
+    <div class="social-media"> 
+      <a href="https://www.instagram.com/evolutiontech__/" target="_blank" rel="noopener noreferrer"
+        title="Siga-nos no Instagram" class="social-link">  
+        <img src="../img/instagram-convertido.png" alt="Ícone do Instagram">
+        <span><strong>evolutiontech_</strong></span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="quiz-canva.js"></script>
+</body>
+</html>

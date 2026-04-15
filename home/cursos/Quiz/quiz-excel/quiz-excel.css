@@ -1,0 +1,757 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #000;
+    transition: 0.3s;
+    text-align: right;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #f57c00;
+    color: white;
+    padding: 15px 0; /* Aumenta o padding vertical do header */
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.header-top {
+  padding: 0 20px; /* Padding vertical mínimo para o header */
+  box-sizing: border-box;
+  position: relative; /* Mantém a referência para itens posicionados dentro */
+  display: flex; /* Alinha itens lado a lado */
+  align-items: center; /* Alinha verticalmente */
+  width: 100%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: white;
+    margin-top: 10px;
+}
+
+.center-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Permite o ajuste fino da posição */
+  left: 1px; /* Desloca o bloco para a direita. Ajuste o valor. */
+}
+
+/* Botão hamburguer padrão: escondido */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 1.4rem;
+  padding: 6px 10px;
+  border-radius: 60px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* Mostra o botão apenas em telas pequenas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+    position: absolute;
+    left: 16px;
+    top: 18px;
+    color: #fff;
+  }
+
+  /* Oculta os links quando o menu está fechado */
+  .sub-nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #ff8c00;
+    position: absolute;
+    z-index: 9999;          /* POR CIMA DE TUDO */
+    top: 70px; /* abaixo do cabeçalho */
+    left: 0;
+    right: 0;
+    padding: 15px 0;
+    gap: 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Quando o menu está aberto, mostra os links */
+  body.menu-aberto .sub-nav-links {
+    display: flex;
+  }
+
+  .sub-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .sub-nav-links a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Em telas grandes: os links ficam sempre visíveis e centralizados */
+@media (min-width: 769px) {
+  .sub-nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px; /* separa mais os links */
+    margin-top: 5px; /* desce um pouco da logo/título */
+  }
+}
+
+.course-Icon {
+    width: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+button {
+    background: none;
+    border: none;
+    margin-top: 0.5rem;
+}
+
+header h1,
+header nav {
+    max-width: 1800px;
+    width: 100%;
+    padding: 5px 20px;
+    box-sizing: border-box;
+}
+
+.logo-esq {
+    position: absolute;
+    top: 280%;
+    transform: translateY(-50%);
+    left: 60px;
+    width: 150px;
+    margin-top: 65px;
+}
+
+.logo-esq img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.btn-header {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-weight: bold;
+    line-height: 1;
+    background-color: #f57c00;
+    color: white;
+    border: 2px solid #f57c00;
+    white-space: nowrap;
+}
+
+/* ========== ESTILO GERAL ========== */
+
+body {
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== LIGHT MODE ===== */
+body.light {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* ===== DARK MODE (estilo da primeira imagem) ===== */
+body.dark {
+    background: #2f2f2f;             /* fundo cinza escuro */
+    color: #e6e6e6;                  /* texto claro */
+}
+
+/* ========== TOGGLE DO MODO NOTURNO ========== */
+
+.toggle {
+    width: 70px;
+    height: 30px;
+    border-radius: 50px;
+    background: #f68a42;
+    cursor: pointer;
+    transition: background 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* cor do botão no DARK MODE */
+.toggle.dark {
+    background: #1370ff; /* azul igual ao contorno dos cards */
+}
+
+/* ícones */
+.mode-icon {
+    position: absolute;
+    width: 25px;
+    transition: transform 0.35s ease;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#final-score,
+.question-text,
+.answer-text * {
+  color: #000000 !important;   /* ou outra cor que você quiser */
+}
+
+/* bolinha deslizante */
+.slider {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: transform 0.35s ease;
+    z-index: 5;
+}
+
+/* slider movendo no modo escuro */
+.toggle.dark .slider {
+    transform: translate(35px, -50%);
+}
+
+
+/* ========== ESTILOS DOS CARDS NO DARK MODE ========== */
+
+/* card do quiz */
+body.dark .quiz-card {
+    background: #0f0f0f;                     /* preto suave */
+    border-radius: 22px;
+    border: 4px solid rgba(19,112,255,0.35);  /* azul igual ao site */
+    box-shadow: 0 18px 30px rgba(0,0,0,0.6);
+    color: #e6e6e6;
+}
+/* menu hamburguer */
+
+@media (max-width: 1024px) {
+    body.dark .sub-nav-links {
+        background: #000000;
+        border-radius: 22px;
+        border: 4px solid rgba(19,112,255,0.35);
+        box-shadow: 0 18px 30px rgba(0,0,0,0.6);
+        color: #e6e6e6;
+    }
+}
+
+/* DESKTOP — NÃO mostra a borda azul */
+@media (min-width: 1025px) {
+    body.dark .sub-nav-links {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+/* opções */
+body.dark .quiz-option {
+    background: linear-gradient(180deg, #111111, #0b0b0b);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+    border: 2px solid rgba(255,255,255,0.05);
+}
+
+/* texto das opções */
+body.dark .quiz-option button {
+    color: #d1d1d1;
+}
+
+/* hover */
+body.dark .quiz-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.6),
+                0 0 0 4px rgba(19,112,255,0.06);
+}
+
+/* duração (12h, 20h etc) */
+body.dark .duration {
+    color: #bdbdbd;
+}
+
+/* badge flutuante (mascote) */
+body.dark .floating-badge {
+    background: linear-gradient(180deg, #06203a, #071224);
+    border: 4px solid rgba(19,112,255,0.3);
+    box-shadow: 0 6px 30px rgba(19,112,255,0.15),
+                0 18px 36px rgba(0,0,0,0.6);
+}
+
+
+/* ===========================================
+   DARK MODE GLOBAL
+   =========================================== */
+
+/* 🌙 DARK MODE aplicado ao quiz-container */
+.toggle.dark .quiz-container {
+    background: #000 !important;   /* container preto */
+   
+}
+
+/* mantém corretas e erradas intactas */
+.toggle.dark .quiz-container .option.correct {
+    background: #00ff6a !important;
+    color: #000 !important;
+    border: 2px solid #00ff6a !important;
+}
+
+/* ===========================================
+   HEADER NO DARK MODE
+   =========================================== */
+
+body.dark header {
+    background: #13161d; /* preto suavemente acinzentado */
+}
+
+/* ===========================================
+   CARDS DOS CURSOS
+   =========================================== */
+
+.card {
+    background: #ffffff; /* modo claro */
+    transition: 0.4s;
+}
+
+body.dark .card {
+    background: #1b1e26; /* CINZA ESCURO bonito */
+    border: 1px solid #272b33;
+}
+
+body.dark .card:hover {
+    background: #22262f; /* fica um pouco mais claro no hover */
+}
+
+/* Evitar que imagens do card escureçam */
+.card img {
+    filter: none !important;
+}
+
+/* ===========================================
+   BOTÕES
+   =========================================== */
+
+button, .btn-header, .option {
+    transition: 0.3s;
+}
+
+body.dark button,
+body.dark .btn-header {
+    background: #20242d;
+    border-color: #303540;
+    color: white;
+}
+
+body.dark button:hover,
+body.dark .btn-header:hover {
+    background: #2a2f3a;
+}
+
+/* ===========================================
+   EXCEÇÕES — NÃO MUDAR NO DARK MODE
+   =========================================== */
+
+/* Verde do acerto */
+.option.correct {
+    background: #00ff6a !important;
+    color: #000 !important;
+    border: 2px solid #00ff6a !important;
+    box-shadow: 0 0 20px #00ff6a, 0 0 40px #00ff6a !important;
+}
+
+/* Vermelho do erro */
+.option.wrong {
+    background: #ff4d4d !important;
+    color: #000 !important;
+    border: 2px solid #ff4d4d !important;
+    box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d !important;
+}
+
+/* Ícone do sol/lua NÃO deve ser afetado */
+.mode-icon {
+    filter: none !important;
+}
+
+/* A bolinha do dark mode */
+body.dark .slider {
+    background: white !important;
+}
+
+/* ===========================================
+   TÍTULOS, TEXTOS E LINKS
+   =========================================== */
+
+body.dark h1,
+body.dark h3,
+body.dark p,
+body.dark a {
+    color: white;
+}
+
+    .header-btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    position: absolute;
+    right: 40px;
+    bottom: 90px;
+}
+
+@media (max-width: 768px) {
+    .header-btns {
+        position: static; /* não perde layout no mobile */
+        margin-top: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .toggle {
+        transform: scale(0.9); /* diminui um pouco no celular */
+    }
+}
+
+.btn-header:hover {
+    background-color: white;
+    color: #f57c00;
+    border-color: white;
+}
+
+ footer {
+      background-color: #000000da;
+      color: white;
+      text-align: center;
+      padding: 35px;
+      width: 100%;
+      margin-top: 40px;
+    }
+/* Instagram no canto inferior esquerdo */
+footer .social-media {
+  position: static;
+  left: 16px;
+  margin-top: -45px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* garante que o link e ícone fiquem alinhados */
+footer .social-media .social-link {
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* tamanho do ícone do instagram */
+footer .social-media img {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+/* Logo da empresa no canto inferior direito */
+footer .footer-logo {
+  position: relative;
+  right: 16px;
+  margin-left: 1400px;
+  bottom: -45px;
+  display: flex;
+  align-items: center;
+}
+
+/* tamanho da logo da empresa */
+footer .footer-logo img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+/* evita sobreposição em telas pequenas: empilha tudo e centraliza */
+@media (max-width: 480px) {
+  footer .social-media,
+  footer .footer-logo {
+    position: static;
+    margin: 8px 0;
+    justify-content: center;
+  }
+
+  footer {
+    padding-bottom: 18px;
+  }
+
+  /* reduz a logo da empresa em telas muito pequenas */
+  footer .footer-logo img {
+    width: 96px;
+  }
+}
+    .footer-logo img {
+  width: 200px; /* Ajuste o tamanho da logo conforme necessário */
+  height: auto;
+}
+footer p {
+  margin: 0;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 992px) {
+   .header-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .logo-esq {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+      .header-btns {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    nav a {
+        padding-top: 0;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    .logo-esq img {
+        width: 120px;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 20px;
+    }
+}
+
+ footer {
+      background-color: #000000cb;
+      color: white;
+      text-align: center;
+      padding: 35px;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+       body {
+      background: linear-gradient(135deg, white, white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: #D9D9D9;
+    }
+
+    .quiz-container {
+      width: 100%;
+      max-width: 700px;
+      font-size: 1.5rem;
+      background: #ffffff; 
+      border-radius: 30px;
+      padding: 50px 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); 
+      text-align: center;
+      color:  #185C37; 
+      border: 5px solid #217346; 
+      margin: 40px auto;
+    }
+
+    .quiz-title {
+  font-size: 2.5rem;
+  color: #33A852; /* verde claro Excel */
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.quiz-container img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  border: 5px solid #217346; /* verde Excel */
+  box-shadow: 0 0 20px rgba(33,115,70,0.6);
+}
+
+.option {
+  background: white;
+  padding: 18px 25px;
+  margin: 12px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 2rem;
+  border: 2px solid #217346; /* verde Excel */
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.option.correct {
+  background: #33A852; /* verde claro Excel */
+  color: #000;
+  border: 2px solid #33A852;
+  box-shadow: 0 0 20px #33A852, 0 0 40px #33A852;
+  transform: scale(1.05);
+}
+
+.option.wrong {
+  background: #ff4d4d;
+  color: #000;
+  border: 2px solid #ff4d4d;
+  box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d;
+  transform: scale(1.05);
+}
+
+.feedback {
+  margin-top: 25px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #217346; /* verde Excel */
+}
+
+.question {
+  display: none;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.5s ease;
+}
+
+.question.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.end h2 {
+  font-size: 2.4rem;
+  color: #33A852; /* verde claro Excel */
+  animation: pulse 1.2s infinite alternate;
+}
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    .mascote-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1000; 
+    }
+
+    .mascote {
+      width: 120px;
+      transition: transform 0.2s;
+    }
+
+    .mascote:hover {
+      transform: scale(1.05);
+    }
+    /*IMPORTANTE*/
+    .fala {
+      position: absolute;
+      bottom: 140px; 
+      right: 0;
+      width: 450px;
+      height: 350px; 
+      background-image: url('../Mascote-IMG/fala.png'); 
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: none;
+      padding: 110px; 
+      box-sizing: border-box;
+    }
+
+    .texto-fala {
+      display: block;
+      text-align: center;  
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+      overflow-wrap: break-word; 
+    }
+ 

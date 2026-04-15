@@ -1,0 +1,165 @@
+body {
+  /* Aplica o degradê radial */
+  background-image: radial-gradient(
+    circle at center,
+    #ff8c2b 0%,
+    /* Laranja vibrante no centro*/ #ffc499 50%,
+    /* Laranja mais claro na metade (para uma transição)*/ #ffffff 100%
+      /* Branco nas bordas */
+  );
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centraliza o conteúdo (main) no meio da tela */
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  background: #ffffffd8;
+  border-radius: 20px; /* cantos arrendodados*/
+  box-shadow: 0 0 10px #7c7b7a;
+  width: 90%;
+  max-width: 900px;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative; /* Torna este o contexto para o posicionamento do botão */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.grid-container {
+  display: grid; /*grades */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ----------------- */
+/* class para colocar o campo bairro e numero na mesma linha */
+/* ----------------- */
+.linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.campo {
+  flex: 1;
+}
+/* até aqui*/
+
+/* nome dos campos mais destacado */
+label {
+  font-weight: bold;
+  color: #000;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  align-self: center;
+  padding: 10px 30px;
+  border: none;
+  background: #ea7121;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer; /*cursor muda */
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.logo-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.logo-container img {
+  width: 150px; /* Aumentado para maior visibilidade */
+  opacity: 1; /* Opacidade total para maior destaque */
+}
+
+/*quando passa o cursor em cima aparece a cor preta */
+button:hover {
+  background: #000;
+}
+
+.links-rodape {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* --- ESTILOS MODO ESCURO --- */
+
+/* Estilo para o botão de toggle */
+.modo-escuro {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* Alinha à esquerda */
+  cursor: pointer;
+}
+
+.modo-escuro input {
+  display: none;
+}
+
+.trilho {
+  display: block;
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 13px;
+  position: relative;
+}
+
+.bola {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.modo-escuro input:checked + .trilho {
+  background-color: #ea7121; /* Laranja quando ativo */
+}
+
+.modo-escuro input:checked + .trilho .bola {
+  transform: translateX(24px);
+}
+
+/* Estilos que mudam no modo escuro */
+.dark-mode main {
+  background: #000000; /* Fundo cinza escuro para o formulário */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode h2,
+.dark-mode label {
+  color: #f1f1f1; /* Texto mais claro */
+}

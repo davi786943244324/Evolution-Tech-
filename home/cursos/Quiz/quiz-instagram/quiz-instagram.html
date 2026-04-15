@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Define o tipo de documento como HTML5 -->
+  <meta charset="UTF-8"> <!-- Define a codificação de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+  <title>Quiz Instagram</title> <!-- Título da página -->
+  <link rel="stylesheet" href="quiz-instagram.css"> <!-- Link do CSS externo -->
+  
+  <!-- Biblioteca de confete para efeito de comemoração -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Sons usados nas interações do quiz -->
+  <audio id="hover-sound" src="../som/hover.mp3" preload="auto"></audio> <!-- Som ao passar o mouse -->
+  <audio id="correct-sound" src="../som/Check mark sound effect [v-aqBz6C4D4].mp3" preload="auto"></audio> <!-- Som de resposta certa -->
+  <audio id="wrong-sound" src="../som/Resposta errada Efeito sonoro [_VPhOMVr13c].mp3" preload="auto"></audio> <!-- Som de resposta errada -->
+  <audio id="celebration-sound" src="../som/FNAF_ Kids Cheering - Gaming Sound Effect (HD) [9bnUWuAO0oU].mp3" preload="auto"></audio> <!-- Som de comemoração -->
+  <audio id="failed-sound" src="../som/Sad Trombone - Sound Effect (HD) [CQeezCdF4mk].mp3" preload="auto"></audio> <!-- Som de falha final -->
+
+ <header>
+      <div class="header-top"> <!-- Parte superior do cabeçalho -->
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button> <!-- Botão hamburguer -->
+    
+    <div class="logo-esq"> <!-- Logo esquerda -->
+      <img src="../img/tech-para-todos.png" alt="Logo Tech Para Todos" style="height:140px;"> <!-- Imagem do logo -->
+    </div>
+    </div>  
+
+    <br>
+    <div class="center-area"> <!-- Área central com o título -->
+        <h1>Cursos de Informática Básica Para melhor Idade</h1>
+        <br>
+        <div class="sub-nav-links"> <!-- Menu de navegação -->
+          <a href="../../../index.html">Início</a> <!-- Isso leva o início da pagina -->
+          <a href="../../../sobrenos.html">Sobre Nós</a><!-- Isso leva para o sobre nós -->
+          <a href="../../../cursos/index.html">Nossos Cursos</a><!-- Isso leva para os cursos -->
+          <a href="../../../contato.html">Contato</a> <!-- Isso leva para o contato -->
+        </div>
+      </div>
+
+    <br>
+    <div class="header-btns"> <!-- Botões do cabeçalho -->
+      <div id="modeBtn" class="toggle light"> <!-- Botão de modo claro/escuro -->
+        <div class="slider"></div>
+    </div>
+      <a href="../../../cadastro.html" class="btn-header">CADASTRE-SE</a> <!-- Botão de cadastro -->
+      <a href="../../../login.html" class="btn-header btn-acao">JÁ SOU ALUNO(A)</a> <!-- Botão de login -->
+      
+    </div>
+</body>
+  </header>
+
+   <div class="quiz-container"> <!-- Contêiner principal do quiz -->
+    <h2 class="quiz-title">INSTAGRAM</h2> <!-- Título do quiz -->
+
+    <!-- Cada bloco .question é uma pergunta do quiz -->
+
+    <div class="question active"> <!-- Pergunta 1 ativa -->
+      <img src="../img/instagram.jpg"> <!-- Imagem ilustrativa -->
+      <h2>Qual é a principal função do Instagram?</h2> <!-- Texto da pergunta -->
+      <div class="option" data-correct="true">Compartilhar fotos e vídeos</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">Enviar e-mails</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Fazer planilhas</div>
+      <div class="option" data-correct="false">Criar apresentações</div>
+      <div class="feedback"></div> <!-- Feedback de acerto/erro -->
+    </div>
+
+    <!-- As demais perguntas seguem a mesma estrutura -->
+
+    <div class="question">
+      <img src="../img/instagram.jpg">
+      <h2>O que é um “Story” no Instagram?</h2><!-- Texto da pergunta -->
+      <div class="option" data-correct="false">Um post fixo no perfil</div> <!-- Opção errada -->
+      <div class="option" data-correct="true">Uma publicação temporária de 24 horas</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">Um tipo de mensagem direta</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Uma lista de seguidores</div> <!-- Opção errada -->
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <img src="../img/instagram.jpg">
+      <h2>Qual símbolo é usado para marcar uma hashtag?</h2>
+      <div class="option" data-correct="false">@</div> <!-- Opção errada -->
+      <div class="option" data-correct="true">#</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">&</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">*</div> <!-- Opção errada -->
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <img src="../img/instagram.jpg">
+      <h2>O que acontece quando você curte uma publicação?</h2>
+      <div class="option" data-correct="false">Ela é enviada por direct</div> <!-- Opção errada -->
+      <div class="option" data-correct="true">Aparece um coração vermelho</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">Ela é apagada</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Ela é marcada como denúncia</div> <!-- Opção errada -->
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <img src="../img/instagram.jpg">
+      <h2>O que significa “Reels” no Instagram?</h2>
+      <div class="option" data-correct="true">Vídeos curtos e criativos</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">Mensagens diretas</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Imagens em carrossel</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Stories antigos</div> <!-- Opção errada -->
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <img src="../img/instagram.jpg">
+      <h2>Como se chama a ferramenta usada para conversar no Instagram?</h2>
+      <div class="option" data-correct="true">Direct</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">Feed</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Reels</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Explorar</div> <!-- Opção errada -->
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <img src="../img/instagram.jpg">
+      <h2>Qual é o nome da página onde aparecem as postagens de quem você segue?</h2>
+      <div class="option" data-correct="true">Feed</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">Reels</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Direct</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Explorar</div> <!-- Opção errada -->
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <img src="../img/instagram.jpg">
+      <h2>Qual botão é usado para seguir outro perfil?</h2>
+      <div class="option" data-correct="true">Seguir</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">Curtir</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Salvar</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Enviar</div> <!-- Opção errada -->
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <img src="../img/instagram.jpg">
+      <h2>O que é o “Explorar” no Instagram?</h2>
+      <div class="option" data-correct="true">Uma seção para descobrir novos conteúdos</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">Uma pasta de mensagens</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Um filtro de fotos</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">Um tipo de história</div> <!-- Opção errada -->
+      <div class="feedback"></div>
+    </div>
+
+    <div class="question">
+      <img src="../img/instagram.jpg">
+      <h2>Qual botão permite postar uma nova foto no Instagram?</h2>
+      <div class="option" data-correct="false">Coração</div> <!-- Opção errada -->
+      <div class="option" data-correct="true">Sinal de “+”</div> <!-- Opção correta -->
+      <div class="option" data-correct="false">A lupa</div> <!-- Opção errada -->
+      <div class="option" data-correct="false">A seta do Direct</div> <!-- Opção errada -->
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Mascote que aparece com dicas durante o quiz -->
+<div class="mascote-container" id="mascote">
+  <img src="../Mascote-IMG/imagem_2025-10-21_143653426-removebg-preview.png" alt="Mascote" class="mascote"> <!-- Imagem do mascote -->
+  <div class="fala" id="fala"> <!-- Balão de fala -->
+  <span class="texto-fala" id="texto-fala"></span> <!-- Texto exibido pelo mascote -->
+  </div>
+</div>
+
+    <!-- Tela final que aparece ao concluir o quiz -->
+    <div class="question end">
+      <img src="../img/Captura de tela 2025-09-26 163624.png"> <!-- Imagem final -->
+      <h2>🎉 Fim do Quiz! 🎉</h2> <!-- Mensagem final -->
+      <p id="final-score"></p> <!-- Pontuação final -->
+    </div>
+
+  </div>
+
+<footer>
+    <div class="footer-logo"> <!-- Logo do rodapé -->
+      <img src="../img/logotipo empresa (2).png" alt="Logo da Empresa">
+    </div>
+    <h1>&copy; 2025 Tech Para Todos - Evolution Tech. Todos os direitos reservados.</h1> 
+    <div class="social-media">  <!-- Área de redes sociais -->
+      <a href="https://www.instagram.com/evolutiontech__/" target="_blank" rel="noopener noreferrer"
+        title="Siga-nos no Instagram" class="social-link">  <!-- Link do Instagram -->
+        <img src="../img/instagram-convertido.png" alt="Ícone do Instagram">
+        <span><strong>evolutiontech_</strong></span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="quiz-instagram.js"></script> <!-- Script principal do quiz -->
+</body>
+</html>
+<!-- Comentários adicionados explicando cada funcionalidade do código -->

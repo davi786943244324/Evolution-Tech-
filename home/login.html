@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Tech para Todos</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="logo-oficial1.png">
+
+  <link rel="stylesheet" href="login.css">
+  <script src="Login.js" defer></script>
+  <style>
+    /* --- ESTILOS DO MODO ESCURO --- */
+    body.escuro {
+      background-color: #121212;
+      /* Fundo geral mais escuro */
+    }
+
+    body.escuro .tela-de-login {
+      background-color: #000000;
+      /* Fundo do formulário preto/cinza escuro */
+      border: 2px solid #f28705;
+      box-shadow: 0 0 20px rgba(242, 135, 5, 0.3);
+    }
+
+    body.escuro h1 {
+      color: #f28705;
+      /* Título em laranja */
+    }
+
+    body.escuro label {
+      color: #ccc;
+      /* Labels em cinza claro */
+    }
+
+    body.escuro input[type="email"],
+    body.escuro input[type="password"] {
+      background-color: #333;
+      color: #fff;
+      border-color: #555;
+    }
+
+    body.escuro .link-cadastro {
+      color: #f28705;
+    }
+
+    /* --- ESTILOS DO FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      color: #555;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-media a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .social-media img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* MODO ESCURO FOOTER */
+    body.escuro footer,
+    body.escuro .social-media a {
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tela-de-login">
+    <!-- Botão de Modo Escuro -->
+    <label class="modo-escuro">
+      <input type="checkbox" id="toggle">
+      <span class="trilho"><span class="bola"></span></span>
+    </label>
+    <!-- Fim do Botão -->
+
+    <h1 id="login-title" style="cursor: pointer;">Faça login</h1>
+    <p id="mensagem-erro-login" class="mensagem-erro"></p>
+
+    <form id="loginForm" action="#" method="post">
+      <label for="username">Insira seu e-mail:</label><br>
+      <input type="email" id="username" name="username" placeholder="Digite seu e-mail" required>
+      <br>
+
+      <label for="password">Senha:</label><br>
+      <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+      <br>
+
+      <button type="submit" id="botaoLogin">OK</button>
+    </form>
+
+    <p>Não tem uma conta?
+      <a href="cadastro.html" class="link-cadastro" target="_blank">
+        Cadastre-se aqui
+      </a>
+    </p>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Pix</title>
+  <link rel="stylesheet" href="quiz-pix.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <audio id="hover-sound" src="../som/hover.mp3" preload="auto"></audio>
+  <audio id="correct-sound" src="../som/Check mark sound effect [v-aqBz6C4D4].mp3" preload="auto"></audio>
+  <audio id="wrong-sound" src="../som/Resposta errada Efeito sonoro [_VPhOMVr13c].mp3" preload="auto"></audio>
+  <audio id="celebration-sound" src="../som/FNAF_ Kids Cheering - Gaming Sound Effect (HD) [9bnUWuAO0oU].mp3" preload="auto"></audio>
+  <audio id="failed-sound" src="../som/Sad Trombone - Sound Effect (HD) [CQeezCdF4mk].mp3" preload="auto"></audio>
+
+ <header>
+      <div class="header-top">
+      <!-- botão hamburguer (esquerda) -->
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    
+
+    <div class="logo-esq">
+      <img src="../img/tech-para-todos.png" alt="Logo Tech Para Todos" style="height:140px;">
+    </div>
+    </div>  
+    <br>
+    <div class="center-area">
+        <h1>Cursos de Informática Básica Para melhor Idade</h1>
+        <br>
+        <div class="sub-nav-links">
+          <a href="../../../index.html">Início</a>
+          <a href="../../../sobrenos.html">Sobre Nós</a>
+          <a href="../../../cursos/index.html">Nossos Cursos</a>
+          <a href="../../../contato.html">Contato</a>
+          
+        </div>
+      </div>
+    <br>
+    <div class="header-btns">
+      <div id="modeBtn" class="toggle light">
+        <div class="slider"></div>
+    </div>
+      <a href="../../../cadastro.html" class="btn-header">CADASTRE-SE</a>
+      <a href="../../../login.html" class="btn-header btn-acao">JÁ SOU ALUNO(A)</a>
+      
+    </div>
+</body>
+  </header>
+
+ <div class="quiz-container">
+    <h2 class="quiz-title">PIX</h2>
+
+    <!-- Pergunta 1 -->
+    <div class="question active">
+      <img src="../img/pix.png">
+      <h2>Qual é a principal função do PIX?</h2>
+      <div class="option" data-correct="true">Realizar transferências e pagamentos instantâneos</div>
+      <div class="option" data-correct="false">Criar planilhas</div>
+      <div class="option" data-correct="false">Editar textos</div>
+      <div class="option" data-correct="false">Fazer compras internacionais automaticamente</div>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Pergunta 2 -->
+<div class="question">
+  <img src="../img/pix.png">
+   <h2>O que é uma chave PIX?</h2>
+<div class="option" data-correct="false">Um código para desbloquear o celular</div>
+<div class="option" data-correct="true">Um identificador usado para receber pagamentos rapidamente</div>
+<div class="option" data-correct="false">Um tipo de cartão virtual</div>
+<div class="option" data-correct="false">Um aplicativo de banco</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 3 -->
+<div class="question">
+  <img src="../img/pix.png">
+ <h2>Qual das opções abaixo é um tipo válido de chave PIX?</h2>
+<div class="option" data-correct="true">CPF</div>
+<div class="option" data-correct="false">Número do RG</div>
+<div class="option" data-correct="false">Data de nascimento</div>
+<div class="option" data-correct="false">Nome completo</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 4 -->
+<div class="question">
+  <img src="../img/pix.png">
+ <h2>Quando alguém envia um PIX para você, onde o dinheiro é recebido?</h2>
+<div class="option" data-correct="false">Na conta do Google</div>
+<div class="option" data-correct="false">No cartão de crédito</div>
+<div class="option" data-correct="false">Na carteira do celular</div>
+<div class="option" data-correct="true">Diretamente na sua conta bancária</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 5 -->
+<div class="question">
+  <img src="../img/pix.png">
+  <h2>O que é necessário para usar o PIX?</h2>
+<div class="option" data-correct="false">Ter um cartão de crédito internacional</div>
+<div class="option" data-correct="true">Ter uma conta em um banco ou instituição de pagamento</div>
+<div class="option" data-correct="false">Instalar o PowerPoint</div>
+<div class="option" data-correct="false">Ter um notebook</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 6 -->
+<div class="question">
+  <img src="../img/pix.png">
+ <h2>Para que serve o QR Code no PIX?</h2>
+<div class="option" data-correct="false">Acessar redes sociais</div>
+<div class="option" data-correct="false">Baixar aplicativos</div>
+<div class="option" data-correct="true">Realizar pagamentos sem digitar dados manualmente</div>
+<div class="option" data-correct="false">Desbloquear funções ocultas</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 7 -->
+<div class="question">
+ <img src="../img/pix.png">
+  <h2>Em quanto tempo um PIX normalmente cai na conta?</h2>
+<div class="option" data-correct="true">Em poucos segundos</div>
+<div class="option" data-correct="false">Em 24 horas</div>
+<div class="option" data-correct="false">Em 3 dias úteis</div>
+<div class="option" data-correct="false">Apenas aos finais de semana</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 8 -->
+<div class="question">
+  <img src="../img/pix.png">
+   <h2>Onde você pode criar ou gerenciar suas chaves PIX?</h2>
+<div class="option" data-correct="false">No navegador do computador</div>
+<div class="option" data-correct="true">No aplicativo do seu banco</div>
+<div class="option" data-correct="false">No aplicativo do WhatsApp</div>
+<div class="option" data-correct="false">No caixa eletrônico</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 9 -->
+<div class="question">
+  <img src="../img/pix.png">
+  <h2>Por que o PIX é útil para transferências entre bancos diferentes?</h2>
+<div class="option" data-correct="false">Porque cobra taxas mais altas</div>
+<div class="option" data-correct="false">Porque funciona só em um banco específico</div>
+<div class="option" data-correct="false">Porque depende de horário comercial</div>
+<div class="option" data-correct="true">Porque é rápido e gratuito na maioria dos casos</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 10 -->
+<div class="question">
+  <img src="../img/pix.png">
+ <h2>Qual botão é usado para enviar um PIX no aplicativo do banco?</h2>
+<div class="option" data-correct="false">Extrato</div>
+<div class="option" data-correct="true">PIX</div>
+<div class="option" data-correct="false">Configurações</div>
+<div class="option" data-correct="false">Fatura</div>
+  <div class="feedback"></div>
+</div>
+
+    <!-- Mascote de ajuda -->
+<div class="mascote-container" id="mascote">
+  <img src="../Mascote-IMG/imagem_2025-10-21_143653426-removebg-preview.png" alt="Mascote" class="mascote">
+  <div class="fala" id="fala">
+  <span class="texto-fala" id="texto-fala"></span>
+  </div>
+</div>
+
+
+    <!-- Tela final -->
+    <div class="question end">
+      <img src="../img/Captura de tela 2025-09-26 163624.png">
+      <h2>🎉 Fim do Quiz! 🎉</h2>
+      <p id="final-score"></p>
+    </div>
+
+  </div>
+
+<footer>
+    <div class="footer-logo">
+      <img src="../img/logotipo empresa (2).png" alt="Logo da Empresa">
+    </div>
+    <h1>&copy; 2025 Tech Para Todos - Evolution Tech. Todos os direitos reservados.</h1> 
+    <div class="social-media"> 
+      <a href="https://www.instagram.com/evolutiontech__/" target="_blank" rel="noopener noreferrer"
+        title="Siga-nos no Instagram" class="social-link">  
+        <img src="../img/instagram-convertido.png" alt="Ícone do Instagram">
+        <span><strong>evolutiontech_</strong></span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="quiz-pix.js"></script>
+</body>
+</html>

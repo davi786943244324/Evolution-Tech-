@@ -1,0 +1,109 @@
+body {
+  /* Define a imagem de fundo correta */
+  background-image: url("melhor-idade.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.tela-de-login {
+  background-color: rgba(233, 102, 3, 0.467);
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  position: relative; /* Necessário para posicionar o botão dentro da caixa */
+}
+
+.tela-de-login a.link-cadastro {
+  color: #0a0a0a; /* Garante que o link seja preto no modo claro */
+}
+
+input {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+  width: 90%;
+}
+button {
+  background-color: rgba(43, 43, 39, 0.845);
+  border: none;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+}
+button:hover {
+  background-color: rgb(247, 92, 36);
+  cursor: pointer;
+}
+
+/* --- ESTILOS MODO ESCURO --- */
+
+/* Estilo para o botão de toggle */
+.modo-escuro {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* Alinha à esquerda */
+  cursor: pointer;
+}
+
+.modo-escuro input {
+  display: none;
+}
+
+.trilho {
+  display: block;
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 13px;
+  position: relative;
+}
+
+.bola {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.modo-escuro input:checked + .trilho {
+  background-color: #ea7121; /* Laranja quando ativo */
+}
+
+.modo-escuro input:checked + .trilho .bola {
+  transform: translateX(24px);
+}
+
+/* Estilos que mudam no modo escuro */
+.dark-mode .tela-de-login {
+  background: #000000; /* Fundo preto para o formulário */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode h1,
+.dark-mode label,
+.dark-mode p {
+  color: #f1f1f1; /* Texto mais claro */
+}
+
+/* Regra específica para o link no modo escuro */
+.dark-mode .tela-de-login a.link-cadastro {
+  color: #ffffff; /* Deixa o link branco */
+}

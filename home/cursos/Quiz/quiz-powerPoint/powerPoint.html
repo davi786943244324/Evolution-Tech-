@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Power Point</title>
+  <link rel="stylesheet" href="powerPoint.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <audio id="hover-sound" src="../som/hover.mp3" preload="auto"></audio>
+  <audio id="correct-sound" src="../som/Check mark sound effect [v-aqBz6C4D4].mp3" preload="auto"></audio>
+  <audio id="wrong-sound" src="../som/Resposta errada Efeito sonoro [_VPhOMVr13c].mp3" preload="auto"></audio>
+  <audio id="celebration-sound" src="../som/FNAF_ Kids Cheering - Gaming Sound Effect (HD) [9bnUWuAO0oU].mp3" preload="auto"></audio>
+  <audio id="failed-sound" src="../som/Sad Trombone - Sound Effect (HD) [CQeezCdF4mk].mp3" preload="auto"></audio>
+
+ <header>
+      <div class="header-top">
+      <!-- botão hamburguer (esquerda) -->
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    
+
+    <div class="logo-esq">
+      <img src="../img/tech-para-todos.png" alt="Logo Tech Para Todos" style="height:140px;">
+    </div>
+    </div>  
+    <br>
+    <div class="center-area">
+        <h1>Cursos de Informática Básica Para melhor Idade</h1>
+        <br>
+        <div class="sub-nav-links">
+          <a href="../../../index.html">Início</a>
+          <a href="../../../sobrenos.html">Sobre Nós</a>
+          <a href="../../../cursos/index.html">Nossos Cursos</a>
+          <a href="../../../contato.html">Contato</a>
+          
+        </div>
+      </div>
+    <br>
+    <div class="header-btns">
+      <div id="modeBtn" class="toggle light">
+        <div class="slider"></div>
+    </div>
+      <a href="../../../cadastro.html" class="btn-header">CADASTRE-SE</a>
+      <a href="../../../login.html" class="btn-header btn-acao">JÁ SOU ALUNO(A)</a> 
+      
+    </div>
+</body>
+  </header>
+
+  <div class="quiz-container">
+    <h2 class="quiz-title">POWER POINT</h2>
+
+   <!-- Pergunta 1 -->
+    <div class="question active">
+      <img src="../img/powerPoint.png">
+      <h2>Qual programa é usado para criar apresentações de slides?</h2>
+      <div class="option" data-correct="false">Word</div>
+      <div class="option" data-correct="false">Excel</div>
+      <div class="option" data-correct="true">PowerPoint</div>
+      <div class="option" data-correct="false">Bloco de notas</div>
+      <div class="feedback"></div>
+    </div>
+
+    <!-- Pergunta 2 -->
+<div class="question">
+  <img src="../img/powerPoint.png">
+  <h2>Qual recurso permite adicionar transições entre os slides?</h2>
+  <div class="option" data-correct="false">Animações</div>
+  <div class="option" data-correct="true">Transições</div>
+  <div class="option" data-correct="false">Inserir</div>
+  <div class="option" data-correct="false">Exibir</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 3 -->
+<div class="question">
+  <img src="../img/powerPoint.png">
+  <h2>Qual atalho salva rapidamente uma apresentação no PowerPoint?</h2>
+  <div class="option" data-correct="false">Ctrl + P</div>
+  <div class="option" data-correct="true">Ctrl + S</div>
+  <div class="option" data-correct="false">Ctrl + N</div>
+  <div class="option" data-correct="false">Ctrl + Z</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 4 -->
+<div class="question">
+  <img src="../img/powerPoint.png">
+  <h2>Qual guia é usada para inserir imagens, formas e gráficos?</h2>
+  <div class="option" data-correct="false">Design</div>
+  <div class="option" data-correct="true">Inserir</div>
+  <div class="option" data-correct="false">Animações</div>
+  <div class="option" data-correct="false">Revisão</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 5 -->
+<div class="question">
+  <img src="../img/powerPoint.png">
+  <h2>Qual recurso permite criar efeitos em objetos dentro de um slide?</h2>
+  <div class="option" data-correct="true">Animações</div>
+  <div class="option" data-correct="false">Transições</div>
+  <div class="option" data-correct="false">Design</div>
+  <div class="option" data-correct="false">Layout</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 6 -->
+<div class="question">
+  <img src="../img/powerPoint.png">
+  <h2>Como alterar o tema de design de uma apresentação?</h2>
+  <div class="option" data-correct="false">Exibir → Modo de leitura</div>
+  <div class="option" data-correct="true">Design → Temas</div>
+  <div class="option" data-correct="false">Inserir → Tabela</div>
+  <div class="option" data-correct="false">Animações → Painel de Animação</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 7 -->
+<div class="question">
+  <img src="../img/powerPoint.png">
+  <h2>Qual guia contém opções para iniciar e controlar a apresentação de slides?</h2>
+  <div class="option" data-correct="false">Inserir</div>
+  <div class="option" data-correct="false">Design</div>
+  <div class="option" data-correct="true">Apresentação de Slides</div>
+  <div class="option" data-correct="false">Revisão</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 8 -->
+<div class="question">
+  <img src="../img/powerPoint.png">
+  <h2>Como inserir um novo slide em uma apresentação?</h2>
+  <div class="option" data-correct="true">Página Inicial → Novo Slide</div>
+  <div class="option" data-correct="false">Design → Layout</div>
+  <div class="option" data-correct="false">Inserir → Cabeçalho</div>
+  <div class="option" data-correct="false">Revisão → Comentário</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 9 -->
+<div class="question">
+  <img src="../img/powerPoint.png">
+  <h2>Qual recurso permite revisar a ortografia automaticamente?</h2>
+  <div class="option" data-correct="false">Animações</div>
+  <div class="option" data-correct="false">Layout</div>
+  <div class="option" data-correct="true">Verificação Ortográfica</div>
+  <div class="option" data-correct="false">Transições</div>
+  <div class="feedback"></div>
+</div>
+
+<!-- Pergunta 10 -->
+<div class="question">
+  <img src="../img/powerPoint.png">
+  <h2>Qual atalho inicia a apresentação de slides a partir do início?</h2>
+  <div class="option" data-correct="true">F5</div>
+  <div class="option" data-correct="false">Ctrl + S</div>
+  <div class="option" data-correct="false">Ctrl + P</div>
+  <div class="option" data-correct="false">Alt + Enter</div>
+  <div class="feedback"></div>
+</div>
+
+
+    <!-- Mascote de ajuda -->
+<div class="mascote-container" id="mascote">
+  <img src="../Mascote-IMG/imagem_2025-10-21_143653426-removebg-preview.png" alt="Mascote" class="mascote">
+  <div class="fala" id="fala">
+  <span class="texto-fala" id="texto-fala"></span>
+  </div>
+</div>
+
+
+    <!-- Tela final -->
+    <div class="question end">
+      <img src="../img/Captura de tela 2025-09-26 163624.png">
+      <h2>🎉 Fim do Quiz! 🎉</h2>
+      <p id="final-score"></p>
+    </div>
+
+  </div>
+
+<footer>
+    <div class="footer-logo">
+      <img src="../img/logotipo empresa (2).png" alt="Logo da Empresa">
+    </div>
+    <h1>&copy; 2025 Tech Para Todos - Evolution Tech. Todos os direitos reservados.</h1> 
+    <div class="social-media"> 
+      <a href="https://www.instagram.com/evolutiontech__/" target="_blank" rel="noopener noreferrer"
+        title="Siga-nos no Instagram" class="social-link">  
+        <img src="../img/instagram-convertido.png" alt="Ícone do Instagram">
+        <span><strong>evolutiontech_</strong></span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="powerPoint.js"></script>
+</body>
+</html>

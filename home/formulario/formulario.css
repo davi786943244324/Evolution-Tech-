@@ -1,0 +1,169 @@
+body {
+  font-family: Arial, sans-serif;
+  /* Define a cor de fundo caso o degradê não carregue (fallback) */
+  background-color: #ffffff; /* Branco */
+
+  /* Centraliza o formulário na tela e permite responsividade */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha o formulário no topo */
+  padding: 20px;
+  box-sizing: border-box;
+
+  /* Aplica o degradê radial */
+  background-image: radial-gradient(
+    circle at center,
+    #ff8c2b 0%,
+    /* Laranja vibrante no centro*/ #ffc499 50%,
+    /* Laranja mais claro na metade (para uma transição)*/ #ffffff 100%
+      /* Branco nas bordas */
+  );
+
+  /* Opcional: Garante que o fundo cubra toda a área de visualização */
+  min-height: 100vh;
+  margin: 0;
+}
+
+.form-container {
+  max-width: 800px; /* Formulário maior */
+  width: 100%; /* Ocupa 100% da largura disponível até o max-width */
+  margin: 20px auto;
+  background-color: #f6f6f6;
+  border: 1px solid #f28705;
+  padding: 15px;
+  border-radius: 1px;
+}
+
+.form-header {
+  text-align: center;
+  display: flex; /* Torna o cabeçalho um container flexível */
+  flex-direction: column; /* Organiza os itens em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  background-color: #f6f6f6;
+  padding: 10px;
+  margin: -15px -15px 15px -15px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.header-title-area {
+  display: flex; /* Torna esta área flexível para logo e h1 */
+  align-items: center; /* Alinha verticalmente logo e h1 */
+  justify-content: center; /* Centraliza logo e h1 */
+  gap: 15px; /* Espaçamento entre logo e h1 */
+  margin-bottom: 5px; /* Espaço entre o título e a legenda */
+}
+
+.form-logo {
+  width: 80px; /* Aumenta o tamanho da logo */
+  height: auto;
+}
+.form-legend {
+  height: auto;
+}
+
+.form-header h1 {
+  font-weight: 300;
+  color: #f28705;
+  margin: 0;
+  font-size: 2em;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px; /* Espaço entre os campos */
+  flex-wrap: wrap; /* Permite que os campos quebrem a linha em telas menores */
+}
+
+.form-row .form-group {
+  flex: 1; /* Faz com que cada grupo de formulário ocupe o espaço disponível igualmente */
+  min-width: 200px; /* Largura mínima antes de quebrar a linha */
+  margin-bottom: 0; /* Remove a margem inferior para alinhar corretamente na linha */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-group label {
+  flex-basis: 100%;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: normal;
+  color: #c05e00;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #f28705;
+  box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.form-group textarea {
+  resize: none; /* Caixa de texto com tamanho fixo */
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: left;
+  margin-top: 2px;
+  min-height: 1em; /* Evita que o layout "pule" */
+}
+
+.radio-group {
+  text-align: center;
+  flex: 3;
+}
+
+.form-footer {
+  text-align: center;
+  background-color: #f6f6f6;
+  padding: 10px;
+  margin: 15px -15px -15px -15px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+#btnEnviar,
+#btnLimpar,
+button[type="submit"] {
+  padding: 10px 20px;
+  border: 1px solid #f28705;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#btnEnviar,
+button[type="submit"] {
+  background-color: #f28705;
+  color: white;
+}
+
+#btnEnviar:hover,
+button[type="submit"]:hover {
+  background-color: #e65100;
+}
+
+#btnLimpar {
+  background-color: transparent;
+  color: #f28705;
+  margin-left: 10px;
+}
+
+#btnLimpar:hover {
+  background-color: #f28705;
+  color: #ffffff;
+}

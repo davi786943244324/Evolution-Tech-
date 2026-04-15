@@ -1,0 +1,632 @@
+/* ======== CORREÇÃO DO ESPAÇO EM CIMA E EMBAIXO ======== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content-wrapper {
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ======== HEADER ======== */
+header {
+  background-color: #f57c00;
+  color: white;
+  padding: 2px 0;
+  width: 100%;
+  margin: 0;
+  /* evita espaço em cima */
+  border: 0;
+}
+
+/* ======== HEADER TOPO ======== */
+.header-top {
+  padding: 5px 20px;
+  margin: 0;
+  /* remove espaço acima */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- ESTILOS DOS LINKS DE NAVEGAÇÃO --- */
+.sub-nav-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sub-nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sub-nav-links a:hover {
+  background-color: white;
+  color: #f57c00; /* Cor do texto laranja para contraste */
+  font-weight: 600;
+}
+
+/* Estilo para o link ativo (caixinha branca) */
+.sub-nav-links a.active {
+  background-color: white;
+  color: #f57c00; /* Cor do texto laranja para contraste */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* --- SEÇÃO DO LOGO ESQUERDO DO CABEÇALHO --- */
+.logo-esq {
+  width: auto;
+  flex-shrink: 0; /* Impede que o logo encolha */
+}
+
+.logo-esq img {
+  height: 100px;
+  /* Diminui a altura do logo */
+  width: auto;
+  object-fit: contain;
+  height: auto;
+  display: block;
+}
+
+.logo-dir img {
+  display: block; /* mostrar no desktop */
+  width: auto;
+  max-width: 140px; /* ajusta conforme necessidade */
+  max-height: 72px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Comando para ajustar a posição do título no cabeçalho */
+.center-area h1 {
+  /* Para mover o título para a direita, aumente o valor abaixo. */
+  margin-left: 90px;
+}
+
+.header-btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-header {
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  font-weight: bold;
+  line-height: 1;
+  background-color: #f57c00;
+  color: white;
+  border: 2px solid #f57c00;
+  white-space: normal;
+  display: flex;
+  flex-wrap: unset;
+}
+
+.btn-header:hover {
+  background-color: white;
+  color: #f57c00;
+  border-color: white;
+}
+
+.btn-aluno {
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+.btn-aluno:hover {
+  background-color: white;
+  color: #f57c00;
+  border-color: white;
+}
+
+.imagem-header {
+  height: 350px; /* Altura reduzida para os cards ficarem mais visíveis */
+  width: 100%;
+  overflow: hidden; /* Esconde as partes da imagem que são cortadas */
+}
+
+.imagem-header img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* Preenche o espaço, mantendo a proporção e cortando o excesso */
+  object-position: center 25%; /* Centraliza a imagem um pouco abaixo do topo, mantendo o rosto visível */
+}
+
+.dot-container {
+  text-align: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #f57c00;
+}
+
+.beneficios {
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px;
+  background-image: radial-gradient(
+    circle at center,
+    #ff8c2b 0%,
+    /* Laranja vibrante no centro*/ #ffc499 50%,
+    /* Laranja mais claro na metade (para uma transição)*/ #ffffff 100%
+      /* Branco nas bordas */
+  );
+  /*aq q muda o fundo dos cards*/
+  margin-top: 0;
+  padding-top: 20px; /* Adiciona um espaçamento superior */
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px; /* Mantém o raio da borda */
+  flex-basis: 250px; /* Largura base para o card */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333;
+  flex-shrink: 0;
+
+  /* HOVER - Transição suave para os efeitos */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  /* O CARD SE LEVANTA LIGEIRAMENTE */
+  transform: translateY(-5px);
+  /* A SOMBRA FICA MAIS PROEMINENTE */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card h3 {
+  color: #f57c00;
+  font-weight: normal; /* Garante que o título não fique em negrito */
+}
+
+/* Seção Hero Bottom (Conteúdo Principal) */
+.hero-bottom {
+  background-color: #ffffff; /*fundo dos cards */
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.hero-conteudo {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-bottom h1 {
+  font-size: 3em;
+  color: #000;
+  margin-bottom: 10px;
+  white-space: normal;
+  display: block;
+}
+
+.hero-bottom h2 {
+  font-size: 1.8em;
+  background: transparent; /* evita fundo branco no container que esconda o texto */
+  color: #ff0101;
+  margin-bottom: 20px;
+  white-space: normal;
+  display: block;
+}
+
+.hero-bottom p {
+  color: #555;
+  font-size: 1.2em;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.btn {
+  background-color: #f57c00;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 15px;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Transição para o hover */
+}
+
+.btn:hover {
+  background-color: #e65100; /* Laranja mais escuro */
+  transform: translateY(-2px); /* Levanta o botão */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+}
+
+.btn-secundario-laranja {
+  background-color: transparent;
+  color: #f57c00;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: 1px solid #f57c00;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secundario-laranja:hover {
+  background-color: #f57c00;
+  color: white;
+}
+
+footer {
+  background-color: #121215;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  gap: 20px; /* Espaçamento entre os itens quando eles quebram a linha */
+}
+
+/* Instagram no canto inferior esquerdo */
+footer .social-media {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0; /* Impede que o item encolha */
+}
+
+/* garante que o link e ícone fiquem alinhados */
+footer .social-media .social-link {
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-left .social-link img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain;
+  display: block;
+}
+
+/* Logo da empresa no canto inferior direito */
+footer .footer-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Impede que o item encolha */
+}
+
+footer p {
+  flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+  margin: 0;
+  padding: 0 10px; /* Adiciona um respiro lateral */
+}
+
+/* tamanho da logo da empresa */
+footer .footer-logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* evita sobreposição em telas pequenas: empilha tudo e centraliza */
+@media (max-width: 680px) {
+  footer {
+    justify-content: center;
+  }
+
+  /* reduz a logo da empresa em telas muito pequenas */
+  footer .footer-logo img {
+    width: 96px;
+  }
+}
+
+/* -------------------------------------------
+   MEDIA QUERIES - TELAS MÉDIAS (TABLETS E CELULARES GRANDES)
+   ------------------------------------------- */
+@media (max-width: 992px) {
+  .header-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .logo-dir,
+  .header-btns {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100%;
+    max-width: none;
+  }
+
+  .logo-esq {
+    display: flex;
+    justify-content: center; /* Centraliza o logo */
+    margin: 0 auto 10px; /* Centraliza e adiciona margem inferior */
+  }
+
+  header h1 {
+    font-size: 2em;
+    margin: 10px 0;
+    order: 2;
+  }
+
+  .header-btns {
+    margin-top: 15px;
+    order: 3;
+  }
+
+  /* Navegação (agora .sub-nav-links) */
+  .sub-nav-links {
+    order: 4;
+  }
+}
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 768px) {
+  /* Mostra o botão hambúrguer */
+  .menu-toggle {
+    display: block;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* Esconde os links no modo normal, pois serão exibidos via JS no menu lateral */
+  .sub-nav-links {
+    display: none;
+    /* Escondido por padrão, ativado via JS */
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    /* Ajuste conforme a altura do seu header */
+    left: 0;
+    width: 100%;
+    background-color: #f57c00;
+    /* Fundo laranja no modo claro */
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sub-nav-links a {
+    background-color: #f57c00;
+    /* Fundo laranja no modo claro */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    width: 70%;
+    max-width: 300px;
+  }
+
+  /* Ajuste para o título do header em telas menores */
+  .center-area {
+    order: 3;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .center-area h1 {
+    text-align: left;
+    padding-left: 20px;
+    margin-left: 0; /* Remove o margin-left de 90px para telas pequenas */
+  }
+
+  /* Estilos para o menu lateral no modo escuro (se você usar a classe body.escuro) */
+  body.escuro .sub-nav-links,
+  body.escuro .sub-nav-links a {
+    background-color: #121215;
+  }
+
+  /* empurra o conteúdo principal para não ficar escondido atrás do header */
+  .imagem-header {
+    margin-top: 0; /* definimos um espaçamento controlado abaixo */
+  }
+
+  /* garante que a imagem hero não seja coberta: reduz sua altura máxima */
+  .imagem-header img {
+    max-height: 260px;
+    object-fit: cover;
+  }
+}
+
+/* Esconde o botão hambúrguer em telas maiores */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Adicione esta regra para a seção, para garantir que ela não force uma altura fixa */
+.imagem-header {
+  height: auto; /* Remove a altura fixa de 350px para permitir o ajuste */
+}
+
+/* garante que os logos apareçam (se estavam com display:none) */
+.logo-dir img {
+  display: block;
+  max-width: 140px; /* Mantém a limitação apenas para o logo da direita */
+  height: auto;
+}
+
+/* header buttons ficam em linha/baixo do h1 em mobile */
+.header-btns {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modo-escuro {
+  display: flex;
+  align-items: center;
+}
+body.escuro .hero-bottom h1 {
+  background-color: #fff;
+}
+/* Esconde o checkbox */
+#toggle {
+  display: none;
+}
+
+/* Trilho */
+.trilho {
+  width: 45px;
+  height: 22px;
+  background: #ccc;
+  border-radius: 25px;
+  position: relative;
+  margin-left: 7px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Bolinha */
+.bola {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+/* Quando ativo */
+#toggle:checked + .trilho {
+  background: #4ea8ff;
+}
+
+#toggle:checked + .trilho .bola {
+  transform: translateX(23px);
+}
+
+/* --- Tema escuro aplicado ao body --- */
+body.escuro {
+  background-color: #000000;
+  color: #f1f1f1;
+}
+
+/* Ajusta cores no modo escuro */
+body.escuro header {
+  background-color: #121215;
+}
+
+body.escuro .btn-header,
+body.escuro .btn {
+  color: #f57c00;
+  color: #fff;
+  border-color: #000;
+}
+
+body.escuro .card {
+  background-color: #303030;
+  color: #ddd;
+}
+
+body.escuro .beneficios {
+  background-image: radial-gradient(
+    circle at center,
+    #333333 0%,
+    #555555 50%,
+    #000000 100%
+  );
+}
+body.escuro .hero-bottom {
+  background-color: #303030;
+}
+body.escuro footer {
+  background-color: #121215;
+}
+
+body.escuro .curso-card {
+  background-color: #222; /* Fundo escuro para os cards no modo escuro */
+  border-color: #444;
+}
+.h2 {
+  color: #fff;
+}
+.social-link {
+  display: inline-flex; /* Alinha o ícone e o texto na mesma linha */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 8px; /* Espaço entre o ícone e o texto */
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: white;
+  transition: transform 0.3s ease;
+}
+.social-link:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.social-media img {
+  width: 30px; /* Tamanho do ícone */
+  height: 30px;
+  vertical-align: middle; /* Alinha o ícone com o texto */
+}
+
+.footer-logo img {
+  width: 120px; /* Ajuste o tamanho da logo conforme necessário */
+  height: auto;
+}
+footer p {
+  margin: 0;
+}

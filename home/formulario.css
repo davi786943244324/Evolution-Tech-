@@ -1,0 +1,212 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  background-image: radial-gradient(circle at center, #ff8c2b 0%, #ffc499 50%, #ffffff 100%);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* =======================
+      FORMULÁRIO
+======================= */
+.form-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  background-color: #f6f6f6;
+  border: 1px solid #f28705;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.form-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f6f6f6;
+  padding: 10px;
+  margin: -15px -15px 15px -15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.header-title-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+.form-logo {
+  width: 80px;
+  height: auto;
+}
+
+.form-header h1 {
+  font-weight: 300;
+  color: #f28705;
+  margin: 0;
+  font-size: 2em;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-group label {
+  flex-basis: 100%;
+  margin-bottom: 5px;
+  color: #c05e00;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #f28705;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  width: 100%;
+  margin-top: 2px;
+  min-height: 1em;
+}
+
+.form-footer {
+  text-align: center;
+  background-color: #f6f6f6;
+  padding: 10px;
+  margin: 15px -15px -15px -15px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#btnEnviar,
+#btnLimpar {
+  padding: 10px 20px;
+  border: 1px solid #f28705;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+#btnEnviar {
+  background-color: #f28705;
+  color: white;
+}
+
+#btnEnviar:hover {
+  background-color: #e65100;
+}
+
+#btnLimpar {
+  background-color: transparent;
+  color: #f28705;
+}
+
+#btnLimpar:hover {
+  background-color: #f28705;
+  color: white;
+}
+
+/* =======================
+      FOOTER AJUSTADO
+======================= */
+
+.footer {
+  width: 100%;
+  padding: 20px;
+  background-color: #232323;
+  color: #fff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+/* ——— Instagram ——— */
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-left .social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.footer-left .social-link:hover {
+  opacity: 0.7;
+}
+
+.footer-left img {
+  width: 32px !important;     /* 🔥 TAMANHO CORRETO */
+  height: 32px !important;
+  object-fit: contain;
+}
+
+/* ——— Texto Central ——— */
+.footer-center p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ——— Logo Direita ——— */
+.footer-right img {
+  height: 55px;
+  width: auto;
+}
+
+/* =======================
+      RESPONSIVO
+======================= */
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right img {
+    height: 45px;
+  }
+}
